@@ -1,0 +1,5 @@
+Download a Mercury srcdist tarball, then run:
+
+    make_debian_package /path/to/mercury-srcdist-VERSION.tar.gz
+
+You can customise the grades in debian/rules.

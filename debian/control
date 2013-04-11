@@ -1,0 +1,15 @@
+Source: mercury-compiler
+Section: devel
+Priority: optional
+Maintainer: Mercury developers <developers@lists.mercurylang.org>
+Build-Depends: debhelper (>= 8.0.0), bison, flex
+Standards-Version: 3.9.2
+Homepage: http://mercurylang.org/
+
+Package: mercury-compiler
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Mercury language compiler
+ Mercury is a modern logic/functional programming language, which combines
+ the clarity and expressiveness of declarative programming with advanced
+ static analysis and error detection features.

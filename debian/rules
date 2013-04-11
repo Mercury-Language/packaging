@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# Adjust the set of grades here, e.g.
+#CONFIGURE_OPTS="--enable-libgrades=asm_fast.gc,hlc.gc"
+
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+endif
+
+ifeq (,$(NUMJOBS))
+	NUMJOBS = 1
+endif
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_clean:
+	# Can't clean before configure.
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(CONFIGURE_OPTS)
+
+override_dh_auto_build:
+	$(MAKE) PARALLEL=-j$(NUMJOBS)
+
+override_dh_auto_install:
+	$(MAKE) install \
+		PARALLEL=-j$(NUMJOBS) \
+		DESTDIR=$$(pwd)/debian/mercury-compiler \
+		INSTALL_MAN_DIR=$$(pwd)/debian/mercury-compiler/usr/share/man \
+		INSTALL_INFO_DIR=$$(pwd)/debian/mercury-compiler/usr/share/info
+	# Don't need these.
+	$(RM) $$(pwd)/debian/mercury-compiler/usr/bin/*.bat
+
+override_dh_auto_test:

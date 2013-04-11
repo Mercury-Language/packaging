@@ -1,0 +1,49 @@
+#!/bin/sh -e
+# A stupid script to deal with stupid tools.
+
+if test -z "$1"
+then
+    echo "usage: $0 mercury-srcdist-*.tar.gz"
+    exit 1
+fi
+
+tarball=$1
+if test ! -f "$tarball"
+then
+    echo "Expected source tarball: $tarball" 1>&2
+    exit 1
+fi
+
+version=$( basename $tarball )
+version=${version%.tar.*}
+version=${version#mercury-*-rotd-}
+case $version in
+    2[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])
+        ;;
+    *)
+        echo "Could not extracting version from filename: $tarball" 1>&2
+        exit 1
+        ;;
+esac
+
+echo "Extracting $tarball"
+tar xf $tarball
+
+echo "Entering directory mercury-srcdist-rotd-${version}"
+cd mercury-srcdist-rotd-${version}
+
+echo "Copying debian directory"
+cp -r ../debian .
+
+echo "Updating debian/changelog"
+dch -m -v ${version}-1 'Release of the day.'
+
+echo "Building binary package:"
+nprocs=$( grep -e '^processor' -c /proc/cpuinfo )
+DEB_BUILD_OPTIONS="parallel=${nprocs}" debuild -i -uc -us -b
+
+echo "done."
+echo "You can delete mercury-srcdist-rotd-${version} if you like."
+exit 0
+
+# vim: set et:

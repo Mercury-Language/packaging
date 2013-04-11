@@ -1,0 +1,5 @@
+mercury-compiler (2013-04-08-1) UNRELEASED; urgency=low
+
+  * Initial release.
+
+ -- Mercury developers <developers@lists.mercurylang.org>  Tue, 09 Apr 2013 17:31:06 +1000
