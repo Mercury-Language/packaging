@@ -1,24 +1,23 @@
 #
 # RPM (Red Hat Package Manager) spec file
 # for the Mercury implementation.
-# 
-# Copyright (C) 1999, 2001, 2002 The University of Melbourne
 #
-# Please send bugfixes or comments to <mercury-bugs@cs.mu.oz.au>.
+# Copyright (C) 1999, 2001, 2002, 2013 The University of Melbourne
 #
 
-Summary:      The logic/functional programming language Mercury
+# Define VERSION and VERSION_WITH_UNDERSCORES with rpmbuild.
+
 Name:         mercury-compiler
-Version:      @VERSION_WITH_UNDERSCORES@
+Version:      %{VERSION_WITH_UNDERSCORES}
 Release:      1
-Packager:     The Mercury Group <mercury@cs.mu.oz.au>
-Vendor:	      The Mercury Group <mercury@cs.mu.oz.au>
-Copyright:    GPL and LGPL
-Group: 	      Development/Languages
-Provides:     mercury 
+License:      GPL-2.0+ and LGPL-2.0+
+Summary:      The logic/functional programming language Mercury
+Url:          http://mercurylang.org/
+Group:        Development/Languages/Other
+Provides:     mercury
 Requires:     gcc make
-Source:       ftp.mercury.cs.mu.oz.au:/pub/mercury/@MAYBE_BETA@mercury-compiler-@VERSION@.tar.gz
-URL:	      http://www.cs.mu.oz.au/mercury/
+BuildRequires: bison flex
+Source:       mercury-srcdist-%{VERSION}.tar.gz
 
 %description
 Mercury is a modern logic/functional programming language, which combines
@@ -31,73 +30,71 @@ development, allowing modularity, separate compilation, and numerous
 optimization/time trade-offs.
 
 This package includes the compiler, profiler, debugger, documentation, etc.
-It does NOT include the "extras" distribution; that is available
-from <http://www.cs.mu.oz.au/mercury/download/release.html>.
-
-%changelog
-* Sun Feb  8 2004 Fergus Henderson <fjh@cs.mu.oz.au>
-- Update to support RedHat 8.0 and Mercury > 0.11.
-  In particular:
-    use /usr/share/man and /usr/share/info instead of /usr/man and /usr/info;
-    use ".1*" instead of ".1" for man pages in order to allow for the
-        possibility of them being compressed;
-    set INSTALL_PREFIX when doing make install;
-    set MERCURY_COMPILER when doing make install,
-        in order to allow installing from the source .tar.gz without
-	needing an already-installed Mercury compiler;
-    mention new files added since Mercury 0.10.
-
-* Thu Oct 16 2002 Fergus Henderson <fjh@cs.mu.oz.au>
-- Modify the way the spec file is generated to support building
-  RPMS for ROTD releases.
-
-* Wed Apr 04 2001 Fergus Henderson <fjh@cs.mu.oz.au>
-- Delete the "Red Hat Contrib Net" stuff, since RHCN seems to have disappeared
-  from the face of the earth.
-
-* Fri Feb 19 1999 Fergus Henderson <fjh@cs.mu.oz.au>
-- Initial version.
+It does NOT include the "extras" distribution.
 
 %prep
-%setup -n mercury-compiler-@VERSION@
+%setup -n mercury-srcdist-%{VERSION}
 
 %build
 sh configure --prefix=/usr
-make
+make PARALLEL=%{?_smp_mflags}
 
 %install
 PLATFORM=`./config.guess`
 MERCURY_COMPILER=$RPM_BUILD_ROOT%{_libdir}/mercury/bin/$PLATFORM/mercury_compile \
 make install \
+    PARALLEL=%{?_smp_mflags} \
     INSTALL_PREFIX=$RPM_BUILD_ROOT%{_prefix} \
     INSTALL_MAN_DIR=$RPM_BUILD_ROOT%{_mandir} \
     INSTALL_INFO_DIR=$RPM_BUILD_ROOT%{_infodir}
 
+# Don't need these.
+rm $RPM_BUILD_ROOT%{_prefix}/bin/*.bat
+
+%post
+%install_info --info-dir=%{_infodir} %{_infodir}/mercury.info.gz
+
+%postun
+%install_info_delete --info-dir=%{_infodir} %{_infodir}/mercury.info.gz
+
 %files
-%doc README* 
-%doc NEWS RELEASE_NOTES VERSION WORK_IN_PROGRESS HISTORY LIMITATIONS 
-%doc INSTALL INSTALL_CVS 
+%defattr(-,root,root)
+%doc README*
+%doc NEWS RELEASE_NOTES VERSION WORK_IN_PROGRESS HISTORY LIMITATIONS
 %doc COPYING COPYING.LIB
-%doc samples
 /usr/bin/c2init
 /usr/bin/canonical_grade
 /usr/bin/info_to_mdb
+/usr/bin/mcov
 /usr/bin/mdb
 /usr/bin/mdemangle
-/usr/bin/mfiltercc
-/usr/bin/mercury.bat
-/usr/bin/mercury_cleanup_install
+/usr/bin/mdice
+/usr/bin/mdprof
+/usr/bin/mdprof_cgi
+/usr/bin/mdprof_create_feedback
+/usr/bin/mdprof_dump
+/usr/bin/mdprof_report_feedback
+/usr/bin/mdprof_test
+/usr/bin/mercury_compile
 /usr/bin/mercury_config
+/usr/bin/mercury_profile
 /usr/bin/mercury_update_interface
+/usr/bin/mfiltercc
 /usr/bin/mgnuc
 /usr/bin/mkfifo_using_mknod
 /usr/bin/mkinit
+/usr/bin/mkinit_erl
 /usr/bin/ml
 /usr/bin/mmake
 /usr/bin/mmc
 /usr/bin/mprof
 /usr/bin/mprof_merge_runs
+/usr/bin/mslice
 /usr/bin/mtags
+/usr/bin/mtc
+/usr/bin/mtc_diff
+/usr/bin/mtc_union
+/usr/bin/prepare_install_dir
 /usr/bin/vpath_find
 /usr/share/man/man1/c2init.1*
 /usr/share/man/man1/mdb.1*
@@ -116,3 +113,32 @@ make install \
 /usr/share/info/mercury_trans_guide.info*
 /usr/share/info/mercury_user_guide.info*
 /usr/lib/mercury
+
+%changelog
+* Mon Apr 15 2013 Peter Wang <novalazy@gmail.com>
+- See git history.
+
+* Sun Feb  8 2004 Fergus Henderson <fjh@cs.mu.oz.au>
+- Update to support RedHat 8.0 and Mercury > 0.11.
+  In particular:
+    use /usr/share/man and /usr/share/info instead of /usr/man and /usr/info;
+    use ".1*" instead of ".1" for man pages in order to allow for the
+        possibility of them being compressed;
+    set INSTALL_PREFIX when doing make install;
+    set MERCURY_COMPILER when doing make install,
+        in order to allow installing from the source .tar.gz without
+        needing an already-installed Mercury compiler;
+    mention new files added since Mercury 0.10.
+
+* Thu Oct 16 2002 Fergus Henderson <fjh@cs.mu.oz.au>
+- Modify the way the spec file is generated to support building
+  RPMS for ROTD releases.
+
+* Wed Apr 04 2001 Fergus Henderson <fjh@cs.mu.oz.au>
+- Delete the "Red Hat Contrib Net" stuff, since RHCN seems to have disappeared
+  from the face of the earth.
+
+* Fri Feb 19 1999 Fergus Henderson <fjh@cs.mu.oz.au>
+- Initial version.
+
+# vim: sts=4 sw=4 et:
