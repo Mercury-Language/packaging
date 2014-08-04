@@ -14,6 +14,8 @@ then
     exit 1
 fi
 
+mode=rotd
+
 version=$( basename $tarball )
 version=${version%.tar.*}
 version=${version#mercury-*-rotd-}
@@ -21,29 +23,69 @@ case $version in
     2[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])
         ;;
     *)
-        echo "Could not extract version from filename: $tarball" 1>&2
-        exit 1
-        ;;
+        version=$( basename $tarball )
+        version=${version%.tar.*}
+        version=${version#mercury-srcdist-}
+
+        mode=srcdist
+
+        case $version in 
+            [0-9][0-9]\.[0-9][0-9])
+                ;;
+            *)
+                echo "Could not extract version from filename: $tarball" 1>&2
+                exit 1
+                ;;
+        esac
 esac
 
 echo "Extracting $tarball"
 tar xf $tarball
 
-echo "Entering directory mercury-srcdist-rotd-${version}"
-cd mercury-srcdist-rotd-${version}
+
+
+case $mode in
+    rotd)
+        UNTAR_DIR=mercury-srcdist-rotd-${version}
+        ;;
+    srcdist)
+        UNTAR_DIR=mercury-srcdist-${version}
+        ;;
+esac
+
+echo "Entering directory $UNTAR_DIR"
+cd "$UNTAR_DIR"
+
+
 
 echo "Copying debian directory"
 cp -r ../debian .
 
+
+
 echo "Updating debian/changelog"
-dch -m -v ${version}-1 'Release of the day.'
+
+case $mode in
+    rotd)
+        dch -m -v ${version}-1 'Release of the day.'
+        ;;
+    srcdist)
+        dch -m -b -v ${version} "Release version ${version}"
+        ;;
+esac
+
+
 
 echo "Building binary package:"
 nprocs=$( grep -e '^processor' -c /proc/cpuinfo )
 DEB_BUILD_OPTIONS="parallel=${nprocs}" debuild -i -uc -us -b
 
+
+
 echo "done."
-echo "You can delete mercury-srcdist-rotd-${version} if you like."
+echo "You can delete $UNTAR_DIR if you like."
 exit 0
+
+
 
 # vim: set et:

@@ -8,7 +8,7 @@ Homepage: http://mercurylang.org/
 
 Package: mercury-compiler
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, java-common, mono-complete, erlang
 Description: Mercury language compiler
  Mercury is a modern logic/functional programming language, which combines
  the clarity and expressiveness of declarative programming with advanced
