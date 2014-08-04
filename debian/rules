@@ -3,7 +3,8 @@
 #export DH_VERBOSE=1
 
 # Adjust the set of grades here, e.g.
-#CONFIGURE_OPTS="--enable-libgrades=asm_fast.gc,hlc.gc"
+#CONFIGURE_OPTS = --enable-libgrades=asm_fast.gc,hlc.gc
+CONFIGURE_OPTS = --enable-csharp-grade --enable-java-grade --enable-erlang-grade --enable-ssdebug-grades
 
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
