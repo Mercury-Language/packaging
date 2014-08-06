@@ -14,6 +14,18 @@ then
     exit 1
 fi
 
+# Check we have some tools.
+if ! type dch >/dev/null 2>/dev/null
+then
+    echo "Missing dch: try apt-get install debhelper"
+    exit 1
+fi
+if ! type makeinfo >/dev/null 2>/dev/null
+then
+    echo "Missing makeinfo: try apt-get install texinfo"
+    exit 1
+fi
+
 # Filename formats:
 #   mercury-srcdist-13.05.2.tar.gz
 #   mercury-srcdist-14.01.tar.gz
