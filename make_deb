@@ -3,7 +3,7 @@
 
 if test -z "$1"
 then
-    echo "usage: $0 mercury-srcdist-*.tar.gz"
+    echo "usage: $0 mercury-*.tar.gz"
     exit 1
 fi
 
@@ -14,11 +14,25 @@ then
     exit 1
 fi
 
-version=$( basename $tarball )
-version=${version%.tar.*}
-version=${version#mercury-*-rotd-}
+# Filename formats:
+#   mercury-srcdist-13.05.2.tar.gz
+#   mercury-srcdist-14.01.tar.gz
+#   mercury-srcdist-14.01.1-beta-2014-08-04.tar.gz
+#   mercury-srcdist-rotd-2014-08-04.tar.gz
+
+base=$( basename $tarball )
+base=${base%.tar.*}
+version=${base#mercury-srcdist-}
 case $version in
-    2[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])
+    rotd-2[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])
+        version=${version#rotd-}
+        mode=rotd
+        ;;
+    [0-9][0-9]*-beta-*)
+        mode=beta
+        ;;
+    [0-9][0-9].[0-9][0-9]*)
+        mode=release
         ;;
     *)
         echo "Could not extract version from filename: $tarball" 1>&2
@@ -26,24 +40,37 @@ case $version in
         ;;
 esac
 
+echo "Version $version ($mode)"
+
 echo "Extracting $tarball"
 tar xf $tarball
 
-echo "Entering directory mercury-srcdist-rotd-${version}"
-cd mercury-srcdist-rotd-${version}
+echo "Entering directory $base"
+cd "$base"
 
 echo "Copying debian directory"
 cp -r ../debian .
 
 echo "Updating debian/changelog"
-dch -m -v ${version}-1 'Release of the day.'
+
+case $mode in
+    rotd)
+        dch -m -v ${version}-1 'Release of the day.'
+        ;;
+    beta)
+        dch -m -b -v ${version} "Beta version ${version}"
+        ;;
+    release)
+        dch -m -b -v ${version} "Release version ${version}"
+        ;;
+esac
 
 echo "Building binary package:"
 nprocs=$( grep -e '^processor' -c /proc/cpuinfo )
 DEB_BUILD_OPTIONS="parallel=${nprocs}" debuild -i -uc -us -b
 
 echo "done."
-echo "You can delete mercury-srcdist-rotd-${version} if you like."
+echo "You can delete $base if you like."
 exit 0
 
 # vim: set et:
