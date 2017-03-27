@@ -1,38 +1,35 @@
 #!/usr/bin/make -f
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+# You must remove unused comment lines for the released package.
+#export DH_VERBOSE = 1
 
-# Adjust the set of grades here, e.g.
-#CONFIGURE_OPTS = --enable-libgrades=asm_fast.gc,hlc.gc
-CONFIGURE_OPTS = --enable-csharp-grade --enable-java-grade --enable-erlang-grade --enable-ssdebug-grades
-
-ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-endif
-
-ifeq (,$(NUMJOBS))
-	NUMJOBS = 1
-endif
-
+# Not comptible with gcc-4.8
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all,-fortify,-stackprotectorstrong,-stackprotector
 %:
 	dh $@ --parallel
 
+# Don't trust autoreconf to do this, it fucks it up, because autotools suck.
+.PHONY: autoreconf
+autoreconf:
+	aclocal -I m4
+	autoconf
+
+.PHONY: bootstrap
+bootstrap : autoreconf
+	CC=gcc-4.8 DEFAULT_GRADE=hlc.gc.pregen \
+	   ./configure --prefix /tmp//mer-boot \
+		--enable-libgrades=hlc.gc.pregen
+	make install
+	make realclean
+
+override_dh_auto_configure: autoreconf bootstrap
+	PATH=$$PATH:/tmp/mer-boot/bin CC=gcc-4.8 dh_auto_configure -- \
+		 --enable-libgrades=hlc.gc,hlc.gc.par,asm_fast.gc,asm_fast.par.gc.stseg,asm_fast.gc.decldebug.stseg,asm_fast.gc.trseg,asm_fast.gc.profdeep.stseg,hlc.gc.trseg,asm_fast.gc.memprof.stseg,asm_fast.gc.prof.stseg
+
 override_dh_auto_clean:
-	# Can't clean before configure.
+	find . -name .gitignore -o -name -cvsignore | xargs rm
+	chmod a-x samples extras benchmarks
+	if [ -x scripts/mmake ]; then dh_auto_clean; fi
 
-override_dh_auto_configure:
-	dh_auto_configure -- $(CONFIGURE_OPTS)
-
-override_dh_auto_build:
-	$(MAKE) PARALLEL=-j$(NUMJOBS)
-
-override_dh_auto_install:
-	$(MAKE) install \
-		PARALLEL=-j$(NUMJOBS) \
-		DESTDIR=$$(pwd)/debian/mercury-compiler \
-		INSTALL_MAN_DIR=$$(pwd)/debian/mercury-compiler/usr/share/man \
-		INSTALL_INFO_DIR=$$(pwd)/debian/mercury-compiler/usr/share/info
-	# Don't need these.
-	$(RM) $$(pwd)/debian/mercury-compiler/usr/bin/*.bat
-
+# Testing isn't going to work until we can fix the Mercury build system.
 override_dh_auto_test:
+

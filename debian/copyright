@@ -1,46 +1,260 @@
-Format: http://dep.debian.net/deps/dep5
-Upstream-Name: mercury-compiler
-Source: <http://mercurylang.org>
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 Files: *
-Copyright: 1993-2013 The University of Melbourne.
-License: GPL-2.0+
+Copyright: 1993-2012 The University of Melbourne
+           2013-2014 The Mercury Team
+License: GPL-2
 
-Files: library/*
-Copyright: 1993-2013 The University of Melbourne.
+Files: runtime/*
+       library/*
+       browser/*
+       java/*
+       mdbcomp/*
+       trace/*
+       robdd/*
+Copyright: 1993-2012 The University of Melbourne
+           2013-2014 The Mercury Team
+           1995, 2001-2004 Peter Schachte
+License: LGPL-2
+
+Files: runtime/GETOPT/getopt.h
+       runtime/GETOPT/getopt.c
+       runtime/GETOPT/getopt1.c
+       runtime/mercury_getopt.h
+       runtime/mercury_getopt.c
+       runtime/mercury_getopt1.c
+Copyright: 1987-1997 Free Software Foundation, Inc.
 License: LGPL-2.0+
 
-License: GPL-2.0+
- This package is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This package is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
- .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+Files: runtime/mercury_threadscope.c
+Copyright: 2008-2009 The GHC Team
+           2009-2011 The University of Melbourne
+License: LGPL-2
 
-License: LGPL-2.0+
- This package is free software; you can redistribute it and/or
- modify it under the terms of the GNU Lesser General Public
- License as published by the Free Software Foundation; either
- version 2 of the License, or (at your option) any later version.
- .
- This package is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- Lesser General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>.
- .
- On Debian systems, the complete text of the GNU Lesser General
- Public License can be found in "/usr/share/common-licenses/LGPL-2".
+Files: runtime/mercury_hgc.c
+       runtime/mercury_hgc.h
+	   runtime/mercury_expanding_array.h
+Copyright: 2009 Ralph Becket
+           2010 The University of Melbourne
+License: LGPL-2
+
+Files: robdd/*
+Copyright: 1995, 2001-2004 Peter Schachte
+           2006, 2009 The University of Melbourne
+License: LGPL-2
+
+Files: boehm_gc/*
+Copyright: 1988, 1989 Hans-J. Boehm, Alan J. Demers
+           1991-1995 Xerox Corporation
+           1996-1999 Silicon Graphics
+           1999-2001, 2003 Hewlett-Packard
+           1998 Fergus Henderson
+           2001 Red Hat Inc.
+           2004 Andrei Polushin
+License: BDWGC
+
+Files: boehm_gc/libatomic_ops/*
+Copyright: 1991-1994 Xerox Corporation 
+           1996-1999 Silicon Graphics
+           2003-2005 Hewlett-Packard
+           2005, 2007 Thiemo Seufer
+           2009 Bradley Smith
+           2009 Takashi YOSHII
+License: libatomic_ops
+
+Files: boehm_gc/libatomic_ops/tests/list_atomic.c
+       boehm_gc/libatomic_ops/tests/list_atomic.template
+       boehm_gc/libatomic_ops/atomic_ops_stack.c
+       boehm_gc/libatomic_ops/atomic_ops_malloc.c
+Copyright: 2003-2005 Hewlett-Packard Company.
+License: GPL-2
+Comment: Not compiled into Mercury's build of Boehm GC or linked to Mercury
+  programs, will not encumber Mercury programs.
+
+Files:     trace/mercury_event_parser.h
+           trace/mercury_event_parser.c
+Copyright: 1984-2013 Free Software Foundation, Inc.
+License:   GPL-3.0+ with exception
+ As a special exception, you may create a larger work that contains
+ part or all of the Bison parser skeleton and distribute that work
+ under terms of your choice, so long as that work isn't itself a
+ parser generator using the skeleton or a modified version thereof
+ as a parser skeleton.  Alternatively, if you modify or redistribute
+ the parser skeleton itself, you may (at your option) remove this
+ special exception, which will cause the skeleton and the resulting
+ Bison output files to be licensed under the GNU General Public
+ License without this special exception.
+
+Files: doc/texi2html
+Copyright: CERN
+License: GPL-2
+
+Files: scripts/gud.el
+Copyright: 1992-1996 Free Software Foundation, Inc.
+           1998-2000 Fergus Henderson.
+License: GPL-2+
+
+Files: samples/calculator.m
+       samples/calculator2.m
+       samples/cat.m
+       samples/c_interface/c_calls_mercury/c_main_int.m
+       samples/c_interface/c_calls_mercury/mercury_lib.m
+       samples/c_interface/c_calls_mercury/mercury_main.m
+       samples/c_interface/c_calls_mercury/Mmakefile
+       samples/c_interface/cplusplus_calls_mercury/cpp_main_int.m
+Copyright: Public domain
+License: public-domain
+
+Files: extras/curs/*
+Copyright: 2001 Ralph Becket <rbeck@microsoft.com>
+License: LGPL-2 
+
+Files: extras/gator/*
+Copyright: 2005-2006 The University of Melbourne.
+License: GPL-2
+
+Files: extras/lex/*
+Copyright: 2001 Ralph Becket <rbeck@microsoft.com>
+           2001 The Rationalizer Intelligent Software AG
+           2002, 2010 The University of Melbourne
+License: LGPL-2
+
+Files: extras/lex/samples/lex_demo.m
+Copyright: 2001 The Rationalizer Intelligent Software AG
+           2001-2002 The University of Melbourne
+License: GPL-2
+
+Files: extras/morphine
+Copyright: 1999-2001 INRIA
+           1999-2001 INSA de Rennes
+           1999-2001 IFSIC
+           1999-2001 IRISA
+License: LGPL
+
+Files: extras/odbc
+Copyright: 1997 Mission Critical
+           1997-2000, 2002, 2004-2006, 2010 The University of Melbourne
+License: LGPL-2
+
+Files: extras/graphics/mercury_allegro
+Copyright: 2005-2007 Peter Wang
+		   2007 The University of Melbourne
+License: Allegro giftware license
+
+Files: samples/rot13
+Copyright: 1998 Jürgen Stuber
+           2003 Ralph Becket
+           Warwick Harvey <wharvey@cs.monash.edu.au>
+           Fergus Henderson <fjh@cs.mu.oz.au>
+License: GPL-2
+
+Files: samples/rot13/rot13_gustavo.m
+License: Public domain
+
+Files:  samples/muz/zed-csp.sty
+Copyright: 1995 Jim Davies
+License: PERMISSIVE
+ See the text at the beginning of each file.
+
+Files: config.guess
+       config.sub
+       m4/pkg.m4
+       boehm_gc/config.guess
+       boehm_gc/config.sub
+       boehm_gc/compile
+       boehm_gc/ltmain.sh
+       boehm_gc/missing
+       boehm_gc/m4/*
+       boehm_gc/libatomic_ops/compile
+       boehm_gc/libatomic_ops/missing
+       boehm_gc/libatomic_ops/missingdirs
+       scripts/fullarch
+Copyright: 1996 Fran,cois Pinard
+           1995-2013 Free Software Foundation
+           2004 Scott James Remnant <scott@netsplit.com>.
+License: GPL-2.0+ with exceptions
+  These files generated by autotools are provided with exceptions allowing
+  them to be used with software that is built using autotools.  Some are
+  provided with an unlimited license, others with GPL2 plus this exception.
+
+Files: aclocal.m4
+       configure
+       boehm_gc/configure
+       boehm_gc/aclocal.m4
+       boehm_gc/m4/gc_set_version.m4
+       boehm_gc/libatomic_ops/configure
+       boehm_gc/libatomic_ops/aclocal.m4
+Copyright: 1992-2012 Free Software Foundation, Inc.
+License:   PERMISSIVE
+  These files are created by autotools scripts and may be distributed under a
+  very permissive license.  See their individual headers for details.
+
+Files: boehm_gc/install-sh
+       boehm_gc/libatomic_ops/install-sh
+Copyright: 1994 X Consortium
+License: MIT
+
+License: BDWGC
+  THIS MATERIAL IS PROVIDED AS IS, WITH ABSOLUTELY NO WARRANTY EXPRESSED
+  OR IMPLIED.  ANY USE IS AT YOUR OWN RISK.
+  
+  Permission is hereby granted to use or copy this program
+  for any purpose,  provided the above notices are retained on all copies.
+  Permission to modify the code and to distribute modified code is granted,
+  provided the above notices are retained, and a notice that the code was
+  modified is included with the above copyright notice.
+  
+  A few files have other copyright holders. A few of the files needed
+  to use the GNU-style build procedure come with a modified GPL license
+  that appears not to significantly restrict use of the collector, though
+  use of those files for a purpose other than building the collector may
+  require the resulting code to be covered by the GPL.
+
+License: libatomic_ops
+  Permission is hereby granted, free of charge, to any person obtaining a
+  copy of this software and associated documentation files (the "Software"),
+  to deal in the Software without restriction, including without limitation
+  the rights to use, copy, modify, merge, publish, distribute, sublicense,
+  and/or sell copies of the Software, and to permit persons to whom the
+  Software is furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+  DEALINGS IN THE SOFTWARE.
+
+License: Allegro giftware license
+  Allegro is gift-ware. It was created by a number of people working in
+  cooperation, and is given to you freely as a gift. You may use, modify,
+  redistribute, and generally hack it about in any way you like, and you do
+  not have to give us anything in return.
+
+  However, if you like this product you are encouraged to thank us by making
+  a return gift to the Allegro community. This could be by writing an add-on
+  package, providing a useful bug report, making an improvement to the
+  library, or perhaps just releasing the sources of your program so that
+  other people can learn from them. If you redistribute parts of this code or
+  make a game using it, it would be nice if you mentioned Allegro somewhere
+  in the credits, but you are not required to do this. We trust you not to
+  abuse our generosity.
+
+  DISCLAIMER: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+  NON-INFRINGEMENT.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE
+  DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY,
+  WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: GPL-2
+  /usr/share/common-licenses/GPL-2
+
+License: LGPL-2
+  /usr/share/common-licenses/LGPL-2
 

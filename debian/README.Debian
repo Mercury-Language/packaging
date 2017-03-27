@@ -1,0 +1,37 @@
+Mercury for Debian
+
+This is a work in progress.
+
+It is split into multiple packages to allow users who require fewer features
+to have smaller installations.  Grades can be selected individually and
+the compiler and other tools, runtime, development files and documentation
+are also placed in seperate packages.
+
+The following grades are available:
+
+    hlc.gc                          mercury-hlc
+    hlc.par.gc                      mercury-hlcpar
+    hlc.gc.trseg                    mercury-hlctrail
+    asm_fast.gc                     mercury-llc 
+    asm_fast.par.gc.stseg           mercury-llcpar
+    asm_fast.gc.trseg               mercury-llctrail
+    asm_fast.gc.decldebug.stseg     mercury-devel
+    asm_fast.gc.profdeep.stseg      mercury-devel
+    asm_fast.gc.memprof.stseg       mercury-devel
+    asm_fast.gc.prof.stseg          mercury-devel
+
+It is outside the scope of the debian packaging effort to explain what these
+mean and why you might want one or another.  See Grades and grade components
+(section 9.8.1) in the User Guide.  Either in the mercury-docs package.  or
+online
+http://www.mercurylang.org/information/doc-release/mercury_user_guide/Grades-and-grade-components.html
+
+Note that the Java, C# and Erlang backends have not been packaged.
+
+Note also that using the shared libraries in the runtime packages may be
+problematic since Mercury does not do _any_ versioning of shared libraries.
+Users of these packages will need to depend on specific package versions,
+and they will not be able to have multiple versions installed at the same
+time.
+
+ -- Paul Bone <paul@bone.id.au>  Sun, 12 Mar 2017 15:15:47 +1100

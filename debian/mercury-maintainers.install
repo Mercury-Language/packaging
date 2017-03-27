@@ -1,0 +1,11 @@
+usr/bin/canonical_grade
+usr/bin/info_to_mdb
+usr/bin/mdprof_create_feedback
+usr/bin/mdprof_dump
+usr/bin/mdprof_report_feedback
+usr/bin/mdprof_test
+usr/bin/mmake
+usr/bin/prepare_install_dir
+usr/bin/vpath_find
+usr/lib/mercury/mmake
+usr/lib/mercury/reconf

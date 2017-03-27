@@ -1,0 +1,8 @@
+Codename: mercury-jessie
+Suite: jessie
+Origin: John Smith
+Label: Mercury Stable
+Architectures: source i386 amd64
+Components: main
+Description: Mercury packages for Debian Jessie
+SignWith: BDF4EAD2

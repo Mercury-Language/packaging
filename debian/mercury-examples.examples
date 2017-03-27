@@ -1,0 +1,5 @@
+extras/*
+samples
+benchmarks/progs/fibonacci
+benchmarks/progs/icfp2000_*
+benchmarks/progs/mandelbrot

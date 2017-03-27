@@ -1,0 +1,5 @@
+Name: stable
+IncomingDir: incoming
+TempDir: temp
+Allow: mercury-jessie
+

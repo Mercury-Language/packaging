@@ -1,0 +1,86 @@
+# vim: ft=sh
+
+AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}
+HOOKDIR=/var/cache/pbuilder/hooks
+APTCACHEHARDLINK=no
+DEBEMAIL="John Smith <john@example.com>"
+BUILDSOURCEROOTCMD=fakeroot
+
+# Codenames for Debian suites according to their alias. Update these when
+# needed.
+UNSTABLE_CODENAME="sid"
+TESTING_CODENAME="stretch"
+STABLE_CODENAME="jessie"
+STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
+
+# List of Debian suites.
+DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BACKPORTS_SUITE
+    "experimental" "unstable" "testing" "stable")
+
+# List of Ubuntu suites. Update these when needed.
+UBUNTU_SUITES=("xenial" "wily" "vivid" "utopic" "trusty")
+
+# Mirrors to use. Update these to your preferred mirror.
+DEBIAN_MIRROR="http://mirror.internode.on.net/pub"
+UBUNTU_MIRROR="http://mirror.internode.on.net/pub"
+# DEBIAN_COMPONENTS="main contrib non-free"
+DEBIAN_COMPONENTS="main"
+# UBUNTU_COMPONENTS="main restricted universe multiverse"
+UBUNTU_COMPONENTS="main"
+
+# Optionally use the changelog of a package to determine the suite to use if
+# none set.
+if [ -z "${DIST}" ] && [ -r "debian/changelog" ]; then
+    DIST=$(dpkg-parsechangelog --show-field=Distribution)
+fi
+
+# Optionally set a default distribution if none is used. Note that you can set
+# your own default (i.e. ${DIST:="unstable"}).
+: ${DIST:="$(lsb_release --short --codename)"}
+
+# # Optionally change Debian codenames in $DIST to their aliases.
+# case "$DIST" in
+#     $UNSTABLE_CODENAME)
+#         DIST="unstable"
+#         ;;
+#     $TESTING_CODENAME)
+#         DIST="testing"
+#         ;;
+#     $STABLE_CODENAME)
+#         DIST="stable"
+#         ;;
+# esac
+
+# Optionally set the architecture to the host architecture if none set. Note
+# that you can set your own default (i.e. ${ARCH:="i386"}).
+ARCH=${ARCH:="$(dpkg --print-architecture)"}
+
+NAME="$DIST"
+if [ -n "${ARCH}" ]; then
+    NAME="$NAME-$ARCH"
+    DEBOOTSTRAPOPTS=("--arch" "$ARCH" "${DEBOOTSTRAPOPTS[@]}")
+fi
+BASETGZ="/var/cache/pbuilder/$NAME-base.tgz"
+DISTRIBUTION="$DIST"
+BUILDRESULT="/var/cache/pbuilder/result/"
+APTCACHE="/var/cache/pbuilder/$NAME/aptcache/"
+BUILDPLACE="/var/cache/pbuilder/build/"
+
+if $(echo ${DEBIAN_SUITES[@]} | grep -q $DIST); then
+    # Debian configuration
+    MIRRORSITE="$DEBIAN_MIRROR/debian/"
+    COMPONENTS=$DEBIAN_COMPONENTS
+
+    # I (paul) don't know what this is for.
+    if $(echo "$STABLE_CODENAME stable" | grep -q $DIST); then
+        OTHERMIRROR="$OTHERMIRROR | deb $MIRRORSITE $STABLE_BACKPORTS_SUITE $COMPONENTS"
+    fi
+elif $(echo ${UBUNTU_SUITES[@]} | grep -q $DIST); then
+    # Ubuntu configuration
+    MIRRORSITE="$UBUNTU_MIRROR/ubuntu/"
+    COMPONENTS=$UBUNTU_COMPONENTS
+else
+    echo "Unknown distribution: $DIST"
+    exit 1
+fi
+

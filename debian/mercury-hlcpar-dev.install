@@ -1,0 +1,4 @@
+usr/lib/mercury/ints/hlc.par.gc
+usr/lib/mercury/lib/hlc.par.gc/*.a
+usr/lib/mercury/lib/hlc.par.gc/inc
+usr/lib/mercury/modules/hlc.par.gc

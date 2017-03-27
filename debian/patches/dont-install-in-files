@@ -1,0 +1,14 @@
+
+Don't install the mercury.info.in file.
+
+--- a/doc/Mmakefile
++++ b/doc/Mmakefile
+@@ -384,7 +384,7 @@
+ 
+ .PHONY: install_info
+ install_info: $(INFOPAGES) install_dirs
+-	-cp *.info* $(INSTALL_INFO_DIR)
++	-cp *.info *.info-* $(INSTALL_INFO_DIR)
+ 	# Update the .../info/dir file.
+ 	-if [ -x "$(INSTALL_INFO)" ]; then				\
+ 		$(INSTALL_INFO) $(INSTALL_INFO_DIR)/mercury.info;	\

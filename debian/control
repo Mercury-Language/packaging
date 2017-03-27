@@ -1,16 +1,392 @@
-Source: mercury-compiler
+Source: mercury
 Section: devel
-Priority: optional
-Maintainer: Mercury developers <developers@lists.mercurylang.org>
-Build-Depends: debhelper (>= 8.0.0), bison, flex
-Standards-Version: 3.9.2
-Homepage: http://mercurylang.org/
+Priority: extra
+Maintainer: Paul Bone <paul@bone.id.au>
+Build-Depends: debhelper (>=9), autoconf, automake, gcc-4.8, flex, bison,
+  libreadline-dev, texinfo, texi2html, libhwloc-dev, pkg-config
+Standards-Version: 3.9.7
+Homepage: http://mercurylang.org
 
-Package: mercury-compiler
+Package: mercury-tools
+Architecture: i386 amd64
+Depends: ${misc:Depends}, ${shlibs:Depends}, perl, gcc-4.8
+Recommends: mercury-gc-dev,
+  mercury-hlc-dev | mercury-hlcpar-dev | mercury-hlctrail-dev |
+  mercury-llc-dev | mercury-llcpar-dev | mercury-llctrail-dev
+Suggests: mercury-docs, mercury-examples, mercury-devel
+Description: Mercury programming language tools
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains the compiler, debugging and profiling tools.
+
+Package: mercury-recommended
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: java-common, mono-complete, erlang
-Description: Mercury language compiler
- Mercury is a modern logic/functional programming language, which combines
- the clarity and expressiveness of declarative programming with advanced
- static analysis and error detection features.
+Depends: ${misc:Depends}, mercury-tools,
+  mercury-hlc-dev, mercury-hlcpar-dev,
+  mercury-llc-dev, mercury-llcpar-dev,
+  mercury-devel, mercury-docs
+Description: Mercury programming language tools
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This meta-package depends on packages for a reasonable Mercury development
+ environment.
+
+Package: mercury-gc
+Architecture: i386 amd64
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Mercury programming language garbage collector
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains the Mercury fork of the Boehm-Demers-Weiser garbage
+ collector required to run Mercury programs.
+
+Package: mercury-gc-dev
+Architecture: i386 amd64
+Section: libdevel
+Depends: ${misc:Depends}, mercury-gc (= 14.01.1-1)
+Recommends: mercury-tools
+Description: Mercury programming language garbage collector
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains the header files and static libraries for the Mercury
+ fork of the Boehm-Demers-Weiser garbage collector required to run Mercury
+ programs.  It also contains a number of grade-agnostic development files.
+
+Package: mercury-hlc
+Architecture: i386 amd64
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Description: Mercury programming language runtime (hlc.gc)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains dynamic libraries for Mercury programs built in the
+ hlc.gc grade.
+
+Package: mercury-hlc-dev
+Architecture: i386 amd64
+Section: libdevel
+Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-1),
+  mercury-hlc (= 14.01.1-1)
+Recommends: mercury-tools (= 14.01.1-1)
+Description: Mercury programming language development files (hlc.gc)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains header files, interface files and static libraries for
+ the hlc.gc grade.
+
+Package: mercury-hlcpar
+Architecture: i386 amd64
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Description: Mercury programming language runtime (hlc.par.gc)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains dynamic libraries for Mercury programs built in the
+ hlc.par.gc grade.
+
+Package: mercury-hlcpar-dev
+Architecture: i386 amd64
+Section: libdevel
+Depends: ${misc:Depends}, libhwloc-dev, 
+  mercury-gc-dev (= 14.01.1-1), mercury-hlcpar (= 14.01.1-1)
+Recommends: mercury-tools (= 14.01.1-1)
+Description: Mercury programming language development files (hlc.par.gc)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains header files, interface files and static libraries for
+ the hlc.par.gc grade.
+
+Package: mercury-hlctrail
+Architecture: i386 amd64
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Description: Mercury programming language runtime (hlc.gc.trseg)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains dynamic libraries for Mercury programs built in the
+ hlc.gc.trseg grade.
+
+Package: mercury-hlctrail-dev
+Architecture: i386 amd64
+Section: libdevel
+Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-1),
+  mercury-hlctrail (= 14.01.1-1)
+Recommends: mercury-tools (= 14.01.1-1)
+Description: Mercury programming language development files (hlc.gc.trseg)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains header files, interface files and static libraries for
+ the hlc.gc.trseg grade.
+
+Package: mercury-llc
+Architecture: i386 amd64
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Description: Mercury programming language runtime (asm_fast.gc)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains dynamic libraries for Mercury programs built in the
+ asm_fast.gc grade.
+
+Package: mercury-llc-dev
+Architecture: i386 amd64
+Section: libdevel
+Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-1),
+  mercury-llc (= 14.01.1-1)
+Recommends: mercury-tools (= 14.01.1-1)
+Description: Mercury programming language development files (asm_fast.gc)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains header files, interface files and static libraries for
+ the asm_fast.gc grade.
+
+Package: mercury-llcpar
+Architecture: i386 amd64
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Description: Mercury programming language runtime (asm_fast.par.gc.stseg)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains dynamic libraries for Mercury programs built in the
+ asm_fast.par.gc.stseg grade.
+
+Package: mercury-llcpar-dev
+Architecture: i386 amd64
+Section: libdevel
+Depends: ${misc:Depends}, libhwloc-dev,
+  mercury-gc-dev (= 14.01.1-1), mercury-llcpar (= 14.01.1-1)
+Recommends: mercury-tools (= 14.01.1-1)
+Description: Mercury programming language dev files (asm_fast.par.gc.stseg)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains header files, interface files and static libraries for
+ the asm_fast.par.gc.stseg grade.
+
+Package: mercury-llctrail
+Architecture: i386 amd64
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Description: Mercury programming language runtime (asm_fast.gc.trseg)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains dynamic libraries for Mercury programs built in the
+ asm_fast.gc.trseg grade.
+
+Package: mercury-llctrail-dev
+Architecture: i386 amd64
+Section: libdevel
+Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-1),
+  mercury-llctrail (= 14.01.1-1)
+Recommends: mercury-tools (= 14.01.1-1)
+Description: Mercury programming language development files (asm_fast.gc.trseg)
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains header files, interface files and static libraries for
+ the asm_fast.gc.trseg grade.
+
+Package: mercury-devel
+Architecture: i386 amd64
+Section: libdevel
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1),
+  mercury-gc-dev (= 14.01.1-1), libreadline-dev
+Recommends: mercury-tools (= 14.01.1-1)
+Description: Mercury programming language debugging and profiling grades
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains header files and libraries (shared and dynamic) for
+ Mercury programs using the: asm_fast.gc.decldebug.stseg,
+ asm_fast.gc.profdeep.stseg, asm_fast.gc.memprof.stseg and
+ asm_fast.gc.prof.stseg grades.
+
+Package: mercury-docs
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Mercury programming language documentation
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains the documentation.
+
+Package: mercury-examples
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Mercury programming language examples and extras
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains the samples, extras and some benchmarks.  It will
+ install their source code in /usr/share/doc/mercury/, it will not attempt to
+ build or install these programs and libraries..
+
+Package: mercury-maintainers
+Architecture: i386 amd64
+Depends: ${misc:Depends}, ${shlibs:Depends}, make, mercury-tools (= 14.01.1-1)
+Conflicts: mmake
+Description: Mercury programming language maintainers' tools 
+ Mercury is a logic/functional programming language which combines the clarity
+ and expressiveness of declarative programming with advanced static analysis
+ and error detection features.
+ .
+ Its highly optimized execution algorithm delivers efficiency far in excess of
+ existing logic programming systems, and close to conventional programming
+ systems. Mercury addresses the problems of large-scale program development,
+ allowing modularity, separate compilation, and numerous optimization/time
+ trade-offs.
+ .
+ This package contains tools that are either experimental and rarely used
+ (compiler feedback tools), deprecated (mmake) or only of interest to people
+ building the Mercury sources themselves (canonical_grade).
+

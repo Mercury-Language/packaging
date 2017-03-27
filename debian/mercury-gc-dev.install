@@ -1,0 +1,7 @@
+usr/lib/mercury/inc
+usr/lib/mercury/ints/*.int*
+usr/lib/mercury/ints/*.mh
+usr/lib/mercury/ints/*.mih
+usr/lib/mercury/ints/*.module_dep
+usr/lib/mercury/ints/Mercury
+usr/lib/mercury/lib/*.a

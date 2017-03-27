@@ -1,0 +1,22 @@
+
+    <Directory "/srv/mercury/dl2/deb/*/db">
+        Order deny,allow
+        Deny from all
+    </Directory>
+    <Directory "/srv/mercury/dl2/deb/*/conf>
+        Order deny,allow
+        Deny from all
+    </Directory>
+    <Directory "/srv/mercury/dl2/deb/*/incoming">
+        Order deny,allow
+        Deny from all
+    </Directory>
+    <Directory "/srv/mercury/dl2/deb/*/lists">
+        Order deny,allow
+        Deny from all
+    </Directory>
+    <Directory "/srv/mercury/dl2/deb/*/temp">
+        Order deny,allow
+        Deny from all
+    </Directory>
+

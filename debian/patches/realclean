@@ -1,0 +1,33 @@
+Fix "make realclean"
+--- a/Mmakefile
++++ b/Mmakefile
+@@ -796,10 +796,11 @@
+ .PHONY: clean_tests
+ clean_tests:
+ 	+if test -d tests; then \
+-		(cd tests; $(MMAKE) clean) \
++		(cd tests; $(SUBDIR_MMAKE) clean) \
+ 	fi
+ 
+ realclean: realclean_subdirs realclean_local realclean_tests
++	+cd scripts; $(SUBDIR_MMAKE) realclean
+ 
+ .PHONY: realclean_local
+ realclean_local: realclean_config realclean_docs
+@@ -812,7 +813,6 @@
+ 		if [ "$$dir" = scripts ]; then continue; fi; \
+ 		(cd $$dir; $(SUBDIR_MMAKE) realclean) \
+ 	done
+-	+cd scripts; $(SUBDIR_MMAKE) realclean
+ 
+ .PHONY: realclean_docs
+ realclean_docs:
+@@ -825,7 +825,7 @@
+ .PHONY: realclean_tests
+ realclean_tests:
+ 	+if test -d tests; then \
+-		(cd tests; $(MMAKE) realclean) \
++		(cd tests; $(SUBDIR_MMAKE) realclean) \
+ 	fi
+ 
+ #-----------------------------------------------------------------------------#

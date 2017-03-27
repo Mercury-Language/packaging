@@ -1,5 +1,5 @@
-mercury-compiler (2013-04-08-1) UNRELEASED; urgency=low
+mercury (14.01.1-1) mercury-jessie; urgency=low
 
   * Initial release.
 
- -- Mercury developers <developers@lists.mercurylang.org>  Tue, 09 Apr 2013 17:31:06 +1000
+ -- Paul Bone <paul@bone.id.au>  Sun, 12 Mar 2017 15:15:47 +1100

@@ -1,0 +1,12 @@
+usr/lib/mercury/lib/asm_fast.gc.decldebug.stseg
+usr/lib/mercury/lib/asm_fast.gc.profdeep.stseg
+usr/lib/mercury/lib/asm_fast.gc.memprof.stseg
+usr/lib/mercury/lib/asm_fast.gc.prof.stseg
+usr/lib/mercury/ints/asm_fast.gc.decldebug.stseg
+usr/lib/mercury/ints/asm_fast.gc.profdeep.stseg
+usr/lib/mercury/ints/asm_fast.gc.memprof.stseg
+usr/lib/mercury/ints/asm_fast.gc.prof.stseg
+usr/lib/mercury/modules/asm_fast.gc.decldebug.stseg
+usr/lib/mercury/modules/asm_fast.gc.profdeep.stseg
+usr/lib/mercury/modules/asm_fast.gc.memprof.stseg
+usr/lib/mercury/modules/asm_fast.gc.prof.stseg

@@ -1,0 +1,14 @@
+
+DEBEMAIL="john@example.com"
+DEBFULLNAME="John Smith"
+
+export DEBEMAIL DEBFULLNAME
+export REPREPRO_BASE_DIR=/path/to/reprepro/stable
+
+alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+complete -F _quilt_completion $_quilt_complete_opt dquilt
+
+# Use gpg2 with debsign, you may need to modify this, depending on whether
+# gpg or gpg2 has your secret keys.
+alias debsign="debsign -pgpg2"
+
