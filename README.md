@@ -183,8 +183,8 @@ indexes.  gpg will prompt you to resign the updated Release files.
 I have a local copy (well, NFS) of the repository, making it easier to
 GPG-sign, so I need to rsync it onto the webserver.
 
-    rsync -av --del deb/ --exclude db --exclude incoming --exclude temp \
-        --exclude conf --exclude lists deimos:/srv/dl1/deb/
+    rsync -av --del --exclude db --exclude incoming --exclude temp \
+        --exclude conf --exclude lists deb/ deimos:/srv/dl1/deb/
 
 The excluded files simply don't need to be shared.  Likewise if I were
 sharing this over HTTP (this is how dl2 is configured) I would need to

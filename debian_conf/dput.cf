@@ -1,6 +1,6 @@
 [mercury-stable]
 method = local
-incoming = /mnt/net/mercury/dl2/packages/stable/incoming
+incoming = /mnt/net/mercury/dl2/deb/stable/incoming
 # post_upload_command =
 # allow_unsigned_uploads = 1
 
