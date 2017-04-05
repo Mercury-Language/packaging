@@ -68,7 +68,7 @@ Description: Mercury programming language garbage collector
 Package: mercury-gc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-gc (= 14.01.1-1)
+Depends: ${misc:Depends}, mercury-gc (= 14.01.1-2)
 Recommends: mercury-tools
 Description: Mercury programming language garbage collector
  Mercury is a logic/functional programming language which combines the clarity
@@ -88,7 +88,7 @@ Description: Mercury programming language garbage collector
 Package: mercury-hlc
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
 Description: Mercury programming language runtime (hlc.gc)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -106,9 +106,9 @@ Description: Mercury programming language runtime (hlc.gc)
 Package: mercury-hlc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-1),
-  mercury-hlc (= 14.01.1-1)
-Recommends: mercury-tools (= 14.01.1-1)
+Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-2),
+  mercury-hlc (= 14.01.1-2)
+Recommends: mercury-tools (= 14.01.1-2)
 Description: Mercury programming language development files (hlc.gc)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -126,7 +126,7 @@ Description: Mercury programming language development files (hlc.gc)
 Package: mercury-hlcpar
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
 Description: Mercury programming language runtime (hlc.par.gc)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -145,8 +145,8 @@ Package: mercury-hlcpar-dev
 Architecture: i386 amd64
 Section: libdevel
 Depends: ${misc:Depends}, libhwloc-dev, 
-  mercury-gc-dev (= 14.01.1-1), mercury-hlcpar (= 14.01.1-1)
-Recommends: mercury-tools (= 14.01.1-1)
+  mercury-gc-dev (= 14.01.1-2), mercury-hlcpar (= 14.01.1-2)
+Recommends: mercury-tools (= 14.01.1-2)
 Description: Mercury programming language development files (hlc.par.gc)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -164,7 +164,7 @@ Description: Mercury programming language development files (hlc.par.gc)
 Package: mercury-hlctrail
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
 Description: Mercury programming language runtime (hlc.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -182,9 +182,9 @@ Description: Mercury programming language runtime (hlc.gc.trseg)
 Package: mercury-hlctrail-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-1),
-  mercury-hlctrail (= 14.01.1-1)
-Recommends: mercury-tools (= 14.01.1-1)
+Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-2),
+  mercury-hlctrail (= 14.01.1-2)
+Recommends: mercury-tools (= 14.01.1-2)
 Description: Mercury programming language development files (hlc.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -202,7 +202,7 @@ Description: Mercury programming language development files (hlc.gc.trseg)
 Package: mercury-llc
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
 Description: Mercury programming language runtime (asm_fast.gc)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -220,9 +220,9 @@ Description: Mercury programming language runtime (asm_fast.gc)
 Package: mercury-llc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-1),
-  mercury-llc (= 14.01.1-1)
-Recommends: mercury-tools (= 14.01.1-1)
+Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-2),
+  mercury-llc (= 14.01.1-2)
+Recommends: mercury-tools (= 14.01.1-2)
 Description: Mercury programming language development files (asm_fast.gc)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -240,7 +240,7 @@ Description: Mercury programming language development files (asm_fast.gc)
 Package: mercury-llcpar
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
 Description: Mercury programming language runtime (asm_fast.par.gc.stseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -259,8 +259,8 @@ Package: mercury-llcpar-dev
 Architecture: i386 amd64
 Section: libdevel
 Depends: ${misc:Depends}, libhwloc-dev,
-  mercury-gc-dev (= 14.01.1-1), mercury-llcpar (= 14.01.1-1)
-Recommends: mercury-tools (= 14.01.1-1)
+  mercury-gc-dev (= 14.01.1-2), mercury-llcpar (= 14.01.1-2)
+Recommends: mercury-tools (= 14.01.1-2)
 Description: Mercury programming language dev files (asm_fast.par.gc.stseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -278,7 +278,7 @@ Description: Mercury programming language dev files (asm_fast.par.gc.stseg)
 Package: mercury-llctrail
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
 Description: Mercury programming language runtime (asm_fast.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -296,9 +296,9 @@ Description: Mercury programming language runtime (asm_fast.gc.trseg)
 Package: mercury-llctrail-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-1),
-  mercury-llctrail (= 14.01.1-1)
-Recommends: mercury-tools (= 14.01.1-1)
+Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-2),
+  mercury-llctrail (= 14.01.1-2)
+Recommends: mercury-tools (= 14.01.1-2)
 Description: Mercury programming language development files (asm_fast.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -316,9 +316,9 @@ Description: Mercury programming language development files (asm_fast.gc.trseg)
 Package: mercury-devel
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-1),
-  mercury-gc-dev (= 14.01.1-1), libreadline-dev
-Recommends: mercury-tools (= 14.01.1-1)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2),
+  mercury-gc-dev (= 14.01.1-2), libreadline-dev
+Recommends: mercury-tools (= 14.01.1-2)
 Description: Mercury programming language debugging and profiling grades
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
@@ -373,7 +373,7 @@ Description: Mercury programming language examples and extras
 
 Package: mercury-maintainers
 Architecture: i386 amd64
-Depends: ${misc:Depends}, ${shlibs:Depends}, make, mercury-tools (= 14.01.1-1)
+Depends: ${misc:Depends}, ${shlibs:Depends}, make, mercury-tools (= 14.01.1-2)
 Conflicts: mmake
 Description: Mercury programming language maintainers' tools 
  Mercury is a logic/functional programming language which combines the clarity
