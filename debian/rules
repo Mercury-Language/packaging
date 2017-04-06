@@ -15,15 +15,15 @@ autoreconf:
 
 .PHONY: bootstrap
 bootstrap : autoreconf
-	DEFAULT_GRADE=hlc.gc.pregen \
+	CC=gcc-4.8 DEFAULT_GRADE=hlc.gc.pregen \
 	   ./configure --prefix /tmp//mer-boot \
 		--enable-libgrades=hlc.gc.pregen
 	make install
 	make realclean
 
 override_dh_auto_configure: autoreconf bootstrap
-	PATH=$$PATH:/tmp/mer-boot/bin dh_auto_configure -- \
-		 --enable-libgrades=hlc.gc,hlc.gc.par,reg.gc,reg.par.gc.stseg,reg.gc.decldebug.stseg,reg.gc.trseg,reg.gc.profdeep.stseg,hlc.gc.trseg,reg.gc.memprof.stseg,reg.gc.prof.stseg
+	PATH=$$PATH:/tmp/mer-boot/bin CC=gcc-4.8 dh_auto_configure -- \
+		 --enable-libgrades=hlc.gc,hlc.gc.par,asm_fast.gc,asm_fast.par.gc.stseg,asm_fast.gc.decldebug.stseg,asm_fast.gc.trseg,asm_fast.gc.profdeep.stseg,hlc.gc.trseg,asm_fast.gc.memprof.stseg,asm_fast.gc.prof.stseg
 
 override_dh_auto_clean:
 	find . -name .gitignore -o -name -cvsignore | xargs rm

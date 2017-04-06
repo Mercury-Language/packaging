@@ -2,14 +2,14 @@ Source: mercury
 Section: devel
 Priority: extra
 Maintainer: Paul Bone <paul@bone.id.au>
-Build-Depends: debhelper (>=9), autoconf, automake, flex, bison,
+Build-Depends: debhelper (>=9), autoconf, automake, gcc-4.8, flex, bison,
   libreadline-dev, texinfo, texi2html, libhwloc-dev, pkg-config
 Standards-Version: 3.9.7
 Homepage: http://mercurylang.org
 
 Package: mercury-tools
 Architecture: i386 amd64
-Depends: ${misc:Depends}, ${shlibs:Depends}, perl, gcc
+Depends: ${misc:Depends}, ${shlibs:Depends}, perl, gcc-4.8
 Recommends: mercury-gc-dev,
   mercury-hlc-dev | mercury-hlcpar-dev | mercury-hlctrail-dev |
   mercury-llc-dev | mercury-llcpar-dev | mercury-llctrail-dev
@@ -203,7 +203,7 @@ Package: mercury-llc
 Architecture: i386 amd64
 Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
-Description: Mercury programming language runtime (reg.gc)
+Description: Mercury programming language runtime (asm_fast.gc)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
  and error detection features.
@@ -215,7 +215,7 @@ Description: Mercury programming language runtime (reg.gc)
  trade-offs.
  .
  This package contains dynamic libraries for Mercury programs built in the
- reg.gc grade.
+ asm_fast.gc grade.
 
 Package: mercury-llc-dev
 Architecture: i386 amd64
@@ -223,7 +223,7 @@ Section: libdevel
 Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-2),
   mercury-llc (= 14.01.1-2)
 Recommends: mercury-tools (= 14.01.1-2)
-Description: Mercury programming language development files (reg.gc)
+Description: Mercury programming language development files (asm_fast.gc)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
  and error detection features.
@@ -235,13 +235,13 @@ Description: Mercury programming language development files (reg.gc)
  trade-offs.
  .
  This package contains header files, interface files and static libraries for
- the reg.gc grade.
+ the asm_fast.gc grade.
 
 Package: mercury-llcpar
 Architecture: i386 amd64
 Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
-Description: Mercury programming language runtime (reg.par.gc.stseg)
+Description: Mercury programming language runtime (asm_fast.par.gc.stseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
  and error detection features.
@@ -253,7 +253,7 @@ Description: Mercury programming language runtime (reg.par.gc.stseg)
  trade-offs.
  .
  This package contains dynamic libraries for Mercury programs built in the
- reg.par.gc.stseg grade.
+ asm_fast.par.gc.stseg grade.
 
 Package: mercury-llcpar-dev
 Architecture: i386 amd64
@@ -261,7 +261,7 @@ Section: libdevel
 Depends: ${misc:Depends}, libhwloc-dev,
   mercury-gc-dev (= 14.01.1-2), mercury-llcpar (= 14.01.1-2)
 Recommends: mercury-tools (= 14.01.1-2)
-Description: Mercury programming language dev files (reg.par.gc.stseg)
+Description: Mercury programming language dev files (asm_fast.par.gc.stseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
  and error detection features.
@@ -273,13 +273,13 @@ Description: Mercury programming language dev files (reg.par.gc.stseg)
  trade-offs.
  .
  This package contains header files, interface files and static libraries for
- the reg.par.gc.stseg grade.
+ the asm_fast.par.gc.stseg grade.
 
 Package: mercury-llctrail
 Architecture: i386 amd64
 Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= 14.01.1-2)
-Description: Mercury programming language runtime (reg.gc.trseg)
+Description: Mercury programming language runtime (asm_fast.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
  and error detection features.
@@ -291,7 +291,7 @@ Description: Mercury programming language runtime (reg.gc.trseg)
  trade-offs.
  .
  This package contains dynamic libraries for Mercury programs built in the
- reg.gc.trseg grade.
+ asm_fast.gc.trseg grade.
 
 Package: mercury-llctrail-dev
 Architecture: i386 amd64
@@ -299,7 +299,7 @@ Section: libdevel
 Depends: ${misc:Depends}, mercury-gc-dev (= 14.01.1-2),
   mercury-llctrail (= 14.01.1-2)
 Recommends: mercury-tools (= 14.01.1-2)
-Description: Mercury programming language development files (reg.gc.trseg)
+Description: Mercury programming language development files (asm_fast.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
  and expressiveness of declarative programming with advanced static analysis
  and error detection features.
@@ -311,7 +311,7 @@ Description: Mercury programming language development files (reg.gc.trseg)
  trade-offs.
  .
  This package contains header files, interface files and static libraries for
- the reg.gc.trseg grade.
+ the asm_fast.gc.trseg grade.
 
 Package: mercury-devel
 Architecture: i386 amd64
@@ -331,9 +331,9 @@ Description: Mercury programming language debugging and profiling grades
  trade-offs.
  .
  This package contains header files and libraries (shared and dynamic) for
- Mercury programs using the: reg.gc.decldebug.stseg,
- reg.gc.profdeep.stseg, reg.gc.memprof.stseg and
- reg.gc.prof.stseg grades.
+ Mercury programs using the: asm_fast.gc.decldebug.stseg,
+ asm_fast.gc.profdeep.stseg, asm_fast.gc.memprof.stseg and
+ asm_fast.gc.prof.stseg grades.
 
 Package: mercury-docs
 Architecture: all
