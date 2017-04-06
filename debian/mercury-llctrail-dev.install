@@ -1,4 +1,4 @@
-usr/lib/mercury/ints/asm_fast.gc.trseg
-usr/lib/mercury/lib/asm_fast.gc.trseg/*.a
-usr/lib/mercury/lib/asm_fast.gc.trseg/inc
-usr/lib/mercury/modules/asm_fast.gc.trseg
+usr/lib/mercury/ints/reg.gc.trseg
+usr/lib/mercury/lib/reg.gc.trseg/*.a
+usr/lib/mercury/lib/reg.gc.trseg/inc
+usr/lib/mercury/modules/reg.gc.trseg

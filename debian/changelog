@@ -1,5 +1,7 @@
 mercury (14.01.1-2) mercury-sid; urgency=low
 
+  * Build for sid.
+
  -- Paul Bone <paul@bone.id.au>  Mon, 27 Mar 2017 23:28:54 +1100
 
 mercury (14.01.1-1) mercury-jessie; urgency=low

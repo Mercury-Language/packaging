@@ -1,5 +1,6 @@
 Name: stable
 IncomingDir: incoming
 TempDir: temp
-Allow: mercury-jessie
-
+Allow: mercury-jessie mercury-sid
+Permit: unused_files
+Cleanup: unused_files

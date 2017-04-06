@@ -1,4 +1,4 @@
-usr/lib/mercury/ints/asm_fast.gc
-usr/lib/mercury/lib/asm_fast.gc/*.a
-usr/lib/mercury/lib/asm_fast.gc/inc
-usr/lib/mercury/modules/asm_fast.gc
+usr/lib/mercury/ints/reg.gc
+usr/lib/mercury/lib/reg.gc/*.a
+usr/lib/mercury/lib/reg.gc/inc
+usr/lib/mercury/modules/reg.gc
