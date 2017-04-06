@@ -1,4 +1,12 @@
+mercury (14.01.1-2jessie0) mercury-jessie; urgency=low
+
+  * Backport to jessie.
+
+ -- Paul Bone <paul@bone.id.au>  Thu, 6 Apr 2017 10:50:02 +1000
+
 mercury (14.01.1-2) mercury-sid; urgency=low
+
+  * Build for sid.
 
  -- Paul Bone <paul@bone.id.au>  Mon, 27 Mar 2017 23:28:54 +1100
 
