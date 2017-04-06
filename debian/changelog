@@ -1,3 +1,9 @@
+mercury (14.01.1-4jessie0) mercury-jessie; urgency=low
+
+  * Backport to jessie.
+
+ -- Paul Bone <paul@bone.id.au>  Thu, 6 Apr 2017 10:50:02 +1000
+
 mercury (14.01.1-4) mercury-stretch; urgency=low
 
   + Bugfix: mercury-hlctrail-dev package the correct files

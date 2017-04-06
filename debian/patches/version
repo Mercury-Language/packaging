@@ -4,7 +4,7 @@ Update version number
 @@ -1,5 +1,5 @@
  This directory contains the source distribution for the University of Melbourne
 -Mercury compiler, version 14.01.1.
-+Mercury compiler, version 14.01.1-3.
++Mercury compiler, version 14.01.1-4jessie0.
  
  	The Mercury implementation is free software.
  	It is:
@@ -15,7 +15,7 @@ Update version number
  # Please assign version numbers according to the scheme explained below.
  
 -VERSION=14.01.1
-+VERSION=14.01.1-3
++VERSION=14.01.1-4jessie0
  
  # We use the following general scheme for version numbers:
  #
