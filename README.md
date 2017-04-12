@@ -164,6 +164,19 @@ Sign and upload these packages.
     dput mercury-stable mercury_14.01.1-1_i386.changes
     popd
 
+
+### Bumping the version number
+
+If you've made changes to the debian packages, either by updating the
+upstream version or by adding patches via dquilt, then bump the version
+number.  You'll need to change debian/changelog, but also debian/control and
+the version patch (in dquilt).
+
+Generally the sid release should get the "root" version number and other
+releases, such as jessie, are backports of this version and hence have
+"jessieN" at the end.
+
+
 Update the repository
 ---------------------
 
