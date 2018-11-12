@@ -23,10 +23,9 @@ bootstrap : autoreconf
 
 override_dh_auto_configure: autoreconf bootstrap
 	PATH=$$PATH:/tmp/mer-boot/bin dh_auto_configure -- \
-		 --enable-libgrades=hlc.gc,hlc.gc.par,reg.gc,reg.par.gc.stseg,reg.gc.decldebug.stseg,reg.gc.trseg,reg.gc.profdeep.stseg,hlc.gc.trseg,reg.gc.memprof.stseg,reg.gc.prof.stseg
+		 --enable-libgrades=hlc.gc,hlc.gc.par,asm_fast.gc,asm_fast.par.gc.stseg,asm_fast.gc.decldebug.stseg,asm_fast.gc.trseg,asm_fast.gc.profdeep.stseg,hlc.gc.trseg,asm_fast.gc.memprof.stseg,asm_fast.gc.prof.stseg
 
 override_dh_auto_clean:
-	find . -name .gitignore -o -name .cvsignore | xargs rm
 	chmod a-x samples extras benchmarks
 	if [ -x scripts/mmake ]; then dh_auto_clean; fi
 

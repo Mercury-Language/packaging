@@ -2,7 +2,7 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 Files: *
 Copyright: 1993-2012 The University of Melbourne
-           2013-2014 The Mercury Team
+           2013-2018 The Mercury Team
 License: GPL-2
 
 Files: runtime/*
@@ -13,7 +13,7 @@ Files: runtime/*
        trace/*
        robdd/*
 Copyright: 1993-2012 The University of Melbourne
-           2013-2014 The Mercury Team
+           2013-2018 The Mercury Team
            1995, 2001-2004 Peter Schachte
 License: LGPL-2
 

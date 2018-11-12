@@ -1,0 +1,4 @@
+usr/lib/mercury/ints/asm_fast.par.gc.stseg
+usr/lib/mercury/lib/asm_fast.par.gc.stseg/*.a
+usr/lib/mercury/lib/asm_fast.par.gc.stseg/inc
+usr/lib/mercury/modules/asm_fast.par.gc.stseg

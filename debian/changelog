@@ -1,3 +1,9 @@
+mercury-rotd (20181114-1) mercury-stretch; urgency=low
+
+  * Update Mercury to rotd-2018-11-14
+
+ -- Paul Bone <paul@bone.id.au>  Fri, 16 Nov 2018 23:08:52 +1100
+
 mercury (14.01.1-3) mercury-sid; urgency=low
 
   * Seperate the remove-paths patch from the version patch
