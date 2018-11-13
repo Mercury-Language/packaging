@@ -15,11 +15,11 @@ Setup the tools
 
 You will need some Debian tools to make Debian packages.
 
-    aptitude install build-essential devscripts pbuilder fakeroot dput
+    apt install build-essential devscripts pbuilder fakeroot dput
 
 And if you plan to maintain the repository, then also install
 
-    aptitude install reprepro rsync
+    apt install reprepro rsync
 
 Investigate each of the files in debian\_conf and install them or their
 contents as necessary.
