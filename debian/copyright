@@ -24,7 +24,7 @@ Files: runtime/GETOPT/getopt.h
        runtime/mercury_getopt.c
        runtime/mercury_getopt1.c
 Copyright: 1987-1997 Free Software Foundation, Inc.
-License: LGPL-2.0+
+License: LGPL-2+
 
 Files: runtime/mercury_threadscope.c
 Copyright: 2008-2009 The GHC Team
@@ -54,7 +54,7 @@ Copyright: 1988, 1989 Hans-J. Boehm, Alan J. Demers
 License: BDWGC
 
 Files: boehm_gc/libatomic_ops/*
-Copyright: 1991-1994 Xerox Corporation 
+Copyright: 1991-1994 Xerox Corporation
            1996-1999 Silicon Graphics
            2003-2005 Hewlett-Packard
            2005, 2007 Thiemo Seufer
@@ -102,12 +102,12 @@ Files: samples/calculator.m
        samples/c_interface/c_calls_mercury/mercury_main.m
        samples/c_interface/c_calls_mercury/Mmakefile
        samples/c_interface/cplusplus_calls_mercury/cpp_main_int.m
-Copyright: Public domain
+Copyright: Public Domain
 License: public-domain
 
 Files: extras/curs/*
 Copyright: 2001 Ralph Becket <rbeck@microsoft.com>
-License: LGPL-2 
+License: LGPL-2
 
 Files: extras/gator/*
 Copyright: 2005-2006 The University of Melbourne.
@@ -139,7 +139,7 @@ License: LGPL-2
 Files: extras/graphics/mercury_allegro
 Copyright: 2005-2007 Peter Wang
 		   2007 The University of Melbourne
-License: Allegro giftware license
+License: Allegro-giftware-license
 
 Files: samples/rot13
 Copyright: 1998 Jürgen Stuber
@@ -149,7 +149,8 @@ Copyright: 1998 Jürgen Stuber
 License: GPL-2
 
 Files: samples/rot13/rot13_gustavo.m
-License: Public domain
+Copyright: Public domain
+License: public-domain
 
 Files:  samples/muz/zed-csp.sty
 Copyright: 1995 Jim Davies
@@ -185,7 +186,7 @@ Files: aclocal.m4
        boehm_gc/libatomic_ops/configure
        boehm_gc/libatomic_ops/aclocal.m4
 Copyright: 1992-2012 Free Software Foundation, Inc.
-License:   PERMISSIVE
+License: PERMISSIVE
   These files are created by autotools scripts and may be distributed under a
   very permissive license.  See their individual headers for details.
 
@@ -197,13 +198,13 @@ License: MIT
 License: BDWGC
   THIS MATERIAL IS PROVIDED AS IS, WITH ABSOLUTELY NO WARRANTY EXPRESSED
   OR IMPLIED.  ANY USE IS AT YOUR OWN RISK.
-  
+  .
   Permission is hereby granted to use or copy this program
   for any purpose,  provided the above notices are retained on all copies.
   Permission to modify the code and to distribute modified code is granted,
   provided the above notices are retained, and a notice that the code was
   modified is included with the above copyright notice.
-  
+  .
   A few files have other copyright holders. A few of the files needed
   to use the GNU-style build procedure come with a modified GPL license
   that appears not to significantly restrict use of the collector, though
@@ -217,10 +218,10 @@ License: libatomic_ops
   the rights to use, copy, modify, merge, publish, distribute, sublicense,
   and/or sell copies of the Software, and to permit persons to whom the
   Software is furnished to do so, subject to the following conditions:
-
+  .
   The above copyright notice and this permission notice shall be included in
   all copies or substantial portions of the Software.
-
+  .
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
@@ -229,12 +230,12 @@ License: libatomic_ops
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
   DEALINGS IN THE SOFTWARE.
 
-License: Allegro giftware license
+License: allegro-giftware-license
   Allegro is gift-ware. It was created by a number of people working in
   cooperation, and is given to you freely as a gift. You may use, modify,
   redistribute, and generally hack it about in any way you like, and you do
   not have to give us anything in return.
-
+  .
   However, if you like this product you are encouraged to thank us by making
   a return gift to the Allegro community. This could be by writing an add-on
   package, providing a useful bug report, making an improvement to the
@@ -243,7 +244,7 @@ License: Allegro giftware license
   make a game using it, it would be nice if you mentioned Allegro somewhere
   in the credits, but you are not required to do this. We trust you not to
   abuse our generosity.
-
+  .
   DISCLAIMER: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
@@ -255,6 +256,14 @@ License: Allegro giftware license
 License: GPL-2
   /usr/share/common-licenses/GPL-2
 
+License: LGPL
+  /usr/share/common-licenses/LGPL-2
+
 License: LGPL-2
   /usr/share/common-licenses/LGPL-2
 
+License: LGPL-2+
+  /usr/share/common-licenses/LGPL-2
+
+License: public-domain
+  Placed in the Public Domain.
