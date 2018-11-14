@@ -26,7 +26,7 @@ override_dh_auto_configure: autoreconf bootstrap
 		 --enable-libgrades=hlc.gc,hlc.gc.par,reg.gc,reg.par.gc.stseg,reg.gc.decldebug.stseg,reg.gc.trseg,reg.gc.profdeep.stseg,hlc.gc.trseg,reg.gc.memprof.stseg,reg.gc.prof.stseg
 
 override_dh_auto_clean:
-	find . -name .gitignore -o -name -cvsignore | xargs rm
+	find . -name .gitignore -o -name .cvsignore | xargs rm
 	chmod a-x samples extras benchmarks
 	if [ -x scripts/mmake ]; then dh_auto_clean; fi
 
