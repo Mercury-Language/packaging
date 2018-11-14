@@ -1,4 +1,5 @@
 # You must remove unused comment lines for the released package.
 copyright-in-readme
 realclean
+remove-paths
 version

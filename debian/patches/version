@@ -1,3 +1,13 @@
+Update version number
+--- a/README
++++ b/README
+@@ -1,5 +1,5 @@
+ This directory contains the source distribution for the University of Melbourne
+-Mercury compiler, version 14.01.1.
++Mercury compiler, version 14.01.1-2.
+ 
+ 	The Mercury implementation is free software.
+ 	It is:
 --- a/VERSION
 +++ b/VERSION
 @@ -7,7 +7,7 @@
@@ -9,25 +19,3 @@
  
  # We use the following general scheme for version numbers:
  #
---- a/README
-+++ b/README
-@@ -1,5 +1,5 @@
- This directory contains the source distribution for the University of Melbourne
--Mercury compiler, version 14.01.1.
-+Mercury compiler, version 14.01.1-2.
- 
- 	The Mercury implementation is free software.
- 	It is:
-@@ -82,12 +82,7 @@
- 
- The documentation sources are in the `doc' subdirectory.  The installation
- process will install INFO, HTML, and DVI versions in the locations specified
--in the file Mmake.common - by default these locations are
--/usr/local/mercury-14.01.1/info,
--/usr/local/mercury-14.01.1/lib/mercury/html,
--and /usr/local/mercury-14.01.1/lib/mercury/doc respectively.
- The installation process will also install Unix-style man pages -
--by default they will be installed in /usr/local/mercury-14.01.1/man/man1.
- The files RELEASE_NOTES, NEWS, HISTORY, LIMITATIONS, and BUGS
- also contain useful information.  If you're interested in looking
- at the source code, the file compiler/notes/compiler_design.html is

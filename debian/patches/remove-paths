@@ -1,0 +1,20 @@
+Remove mentions of filepaths that are incorrect for the debian package of
+Mercury.
+
+--- a/README
++++ b/README
+@@ -82,12 +82,8 @@
+ 
+ The documentation sources are in the `doc' subdirectory.  The installation
+ process will install INFO, HTML, and DVI versions in the locations specified
+-in the file Mmake.common - by default these locations are
+-/usr/local/mercury-14.01.1/info,
+-/usr/local/mercury-14.01.1/lib/mercury/html,
+-and /usr/local/mercury-14.01.1/lib/mercury/doc respectively.
+-The installation process will also install Unix-style man pages -
+-by default they will be installed in /usr/local/mercury-14.01.1/man/man1.
++in the file Mmake.common.
++The installation process will also install Unix-style man pages.
+ The files RELEASE_NOTES, NEWS, HISTORY, LIMITATIONS, and BUGS
+ also contain useful information.  If you're interested in looking
+ at the source code, the file compiler/notes/compiler_design.html is
