@@ -5,7 +5,7 @@ This is a work in progress.
 It is split into multiple packages to allow users who require fewer features
 to have smaller installations.  Grades can be selected individually and
 the compiler and other tools, runtime, development files and documentation
-are also placed in seperate packages.
+are also placed in separate packages.
 
 The following grades are available:
 
@@ -20,7 +20,7 @@ The following grades are available:
     asm_fast.gc.memprof.stseg       mercury-devel
     asm_fast.gc.prof.stseg          mercury-devel
 
-It is outside the scope of the debian packaging effort to explain what these
+It is outside the scope of the Debian packaging effort to explain what these
 mean and why you might want one or another.  See Grades and grade components
 (section 9.8.1) in the User Guide.  Either in the mercury-docs package.  or
 online
