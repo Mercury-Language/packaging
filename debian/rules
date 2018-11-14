@@ -30,6 +30,10 @@ override_dh_auto_clean:
 	chmod a-x samples extras benchmarks
 	if [ -x scripts/mmake ]; then dh_auto_clean; fi
 
+# Don't build dbgsym packages, they don't make sense for Mercury.
+override_dh_strip:
+	dh_strip --no-automatic-dbgsym
+
 # Testing isn't going to work until we can fix the Mercury build system.
 override_dh_auto_test:
 
