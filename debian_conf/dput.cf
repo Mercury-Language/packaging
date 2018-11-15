@@ -1,6 +1,9 @@
-[mercury-stable]
+[mercury]
 method = local
-incoming = /mnt/net/mercury/dl2/deb/stable/incoming
+incoming = /home/paul/hdd/mercury/dl1/deb/incoming
+# fqdn = deimos
 # post_upload_command =
 # allow_unsigned_uploads = 1
 
+[ubuntu]
+fqdn = does.not.exist.domain

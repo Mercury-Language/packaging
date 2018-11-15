@@ -1,17 +1,17 @@
 Codename: mercury-jessie
 Suite: jessie
-Origin: John Smith
-Label: Mercury Stable
+Origin: Paul Bone
+Label: Mercury Packages
 Architectures: source i386 amd64
 Components: main
 Description: Mercury packages for Debian Jessie
 SignWith: BDF4EAD2
 
-Codename: mercury-sid
+Codename: mercury-stretch
 Suite: sid
-Origin: John Smith
-Label: Mercury Stable
+Origin: Paul Bone
+Label: Mercury Packages
 Architectures: source i386 amd64
 Components: main
-Description: Mercury packages for Debian Jessie
+Description: Mercury packages for Debian Stretch
 SignWith: BDF4EAD2

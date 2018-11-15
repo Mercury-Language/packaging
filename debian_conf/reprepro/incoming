@@ -1,6 +1,6 @@
-Name: stable
+Name: mercury
 IncomingDir: incoming
 TempDir: temp
-Allow: mercury-jessie mercury-sid
+Allow: mercury-jessie mercury-stretch
 Permit: unused_files
 Cleanup: unused_files
