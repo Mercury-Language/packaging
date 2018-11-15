@@ -180,28 +180,36 @@ releases, such as jessie, are backports of this version and hence have
 Update the repository
 ---------------------
 
-I'm not going to cover setting up the repository (I forget the exact steps),
-but my configuration files are in debian\_conf/reprepro.  Read and modify
-these as necessary.  In the future when adding a separate snapshots
-repository I'm going to need to change this configuration, and the
-REPREPRO\_BASE\_DIR variable in my .bashrc
+To setup the repository the first time:
+The repository is setup by creating a base directory and copying the files
+The basedir is found by the REPREPRO\_BASE\_DIR variable in my .bashrc from
+debian\_conf/reprepro/ into a conf/ subdirectory.  Also create an incoming
+and temp directories.  When you first use the repository the other paths are
+created.
 
-dput will put package files into the incoming directory.  The command
+dput will put package files into the incoming directory, mercury is the name
+of the repository to use (from ~/.dput.cf):
 
-    reprepro processincoming stable
+    dput mercury new_package.changes
+
+The command
+
+    reprepro processincoming mercury
 
 Will process these files adding them to the repository and rebuilding
-indexes.  gpg will prompt you to resign the updated Release files.
+indexes.  gpg will prompt you to resign the updated Release files.  Because
+of the need for gpg signing this must be run locally, this is why we do not
+run it on deimos and instead it runs on my workstation.  (Unless we had a
+shared key and such).
 
-I have a local copy (well, NFS) of the repository, making it easier to
-GPG-sign, so I need to rsync it onto the webserver.
+I rsync the local copy onto the webserver:
 
     rsync -av --del --exclude db --exclude incoming --exclude temp \
         --exclude conf --exclude lists deb/ deimos:/srv/dl1/deb/
 
 The excluded files simply don't need to be shared.  Likewise if I were
 sharing this over HTTP (this is how dl2 is configured) I would need to
-exclude these files in my apache configuration.  See debian\_conf/apache
+exclude these files in my apache configuration.
 
 
 How to make an RPM binary package
