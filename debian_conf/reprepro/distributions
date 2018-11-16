@@ -8,7 +8,7 @@ Description: Mercury packages for Debian Jessie
 SignWith: BDF4EAD2
 
 Codename: mercury-stretch
-Suite: sid
+Suite: stretch
 Origin: Paul Bone
 Label: Mercury Packages
 Architectures: source i386 amd64
