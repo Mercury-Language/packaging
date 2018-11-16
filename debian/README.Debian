@@ -26,6 +26,8 @@ mean and why you might want one or another.  See Grades and grade components
 online
 http://www.mercurylang.org/information/doc-release/mercury_user_guide/Grades-and-grade-components.html
 
+Or this alternative guide: http://plasmalang.org/docs/grades.html
+
 Note that the Java, C# and Erlang backends have not been packaged.
 
 Note also that using the shared libraries in the runtime packages may be
@@ -34,4 +36,4 @@ Users of these packages will need to depend on specific package versions,
 and they will not be able to have multiple versions installed at the same
 time.
 
- -- Paul Bone <paul@bone.id.au>  Sun, 12 Mar 2017 15:15:47 +1100
+ -- Paul Bone <paul@bone.id.au>  Fri, 16 Nov 2018 22:34:35 +1100
