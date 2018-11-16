@@ -184,8 +184,11 @@ To setup the repository the first time:
 The repository is setup by creating a base directory and copying the files
 The basedir is found by the REPREPRO\_BASE\_DIR variable in my .bashrc from
 debian\_conf/reprepro/ into a conf/ subdirectory.  Also create an incoming
-and temp directories.  When you first use the repository the other paths are
-created.
+and temp directories.  When you first use the repository (after the first
+processincoming) then you may also need to execute:
+
+    reprepro export
+    reprepro createsymlinks
 
 dput will put package files into the incoming directory, mercury is the name
 of the repository to use (from ~/.dput.cf):
