@@ -1,3 +1,9 @@
+mercury (14.01.1-4) mercury-stretch; urgency=low
+
+  + Bugfix: mercury-hlctrail-dev package the correct files
+
+ -- Paul Bone <paul@bone.id.au>  Wed, 14 Nov 2018 22:46:00 +1100
+
 mercury (14.01.1-3) mercury-sid; urgency=low
 
   * Seperate the remove-paths patch from the version patch
