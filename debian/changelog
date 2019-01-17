@@ -1,3 +1,9 @@
+mercury-rotd (20181114-2) mercury-stretch; urgency=low
+
+  + Bugfix: mercury-hlctrail-dev package the correct files
+
+ -- Paul Bone <paul@bone.id.au>  Wed, 17 Jan 2019 00:30:00 +1100
+
 mercury-rotd (20181114-1) mercury-stretch; urgency=low
 
   * Update Mercury to rotd-2018-11-14
