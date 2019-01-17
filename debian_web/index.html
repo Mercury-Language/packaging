@@ -108,6 +108,7 @@ Replace <i>DISTRO</i> with either <code>jessie</code> or
 If your OS version isn't listed,
 then try the jessie packages first, they use the faster low-level-C grades
 but require gcc-4.8 specifically.
+If you wish to use "mercury-rotd" the you'll need the "stretch" packages.
 </p>
 
 <p>
@@ -115,7 +116,7 @@ Update your packages list.
 </p>
 
 <code><pre>
-sudo apt-get update
+sudo apt update
 </pre></code>
 
 <p>
@@ -142,6 +143,11 @@ command:
 <code><pre>
 apt-cache showsrc mercury
 </pre></code>
+
+<h2>More info</h2>
+
+Notes on maintaining these packages are kept
+<a href="https://github.com/Mercury-Language/packaging">on github</a>.
 
 </body>
 </html>
