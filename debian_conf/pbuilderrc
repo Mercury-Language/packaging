@@ -9,8 +9,8 @@ BUILDSOURCEROOTCMD=fakeroot
 # Codenames for Debian suites according to their alias. Update these when
 # needed.
 UNSTABLE_CODENAME="sid"
-TESTING_CODENAME="stretch"
-STABLE_CODENAME="jessie"
+TESTING_CODENAME="buster"
+STABLE_CODENAME="stretch"
 STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
 
 # List of Debian suites.
@@ -18,7 +18,7 @@ DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BAC
     "experimental" "unstable" "testing" "stable")
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("xenial" "wily" "vivid" "utopic" "trusty")
+UBUNTU_SUITES=("disco" "bionic" "xenial")
 
 # Mirrors to use. Update these to your preferred mirror.
 DEBIAN_MIRROR="http://mirror.internode.on.net/pub"
