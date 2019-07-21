@@ -15,3 +15,12 @@ Architectures: source i386 amd64
 Components: main
 Description: Mercury packages for Debian Stretch
 SignWith: BDF4EAD2
+
+Codename: mercury-buster
+Suite: buster
+Origin: Paul Bone
+Label: Mercury Packages
+Architectures: source i386 amd64
+Components: main
+Description: Mercury packages for Debian Stretch
+SignWith: BDF4EAD2

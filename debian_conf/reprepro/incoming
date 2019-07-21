@@ -1,6 +1,6 @@
 Name: mercury
 IncomingDir: incoming
 TempDir: temp
-Allow: mercury-jessie mercury-stretch
+Allow: mercury-jessie mercury-stretch mercury-buster
 Permit: unused_files
 Cleanup: unused_files
