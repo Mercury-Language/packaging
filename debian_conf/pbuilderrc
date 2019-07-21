@@ -1,9 +1,9 @@
 # vim: ft=sh
 
-AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}
+AUTO_DEBSIGN=${AUTO_DEBSIGN:-yes}
 HOOKDIR=/var/cache/pbuilder/hooks
 APTCACHEHARDLINK=no
-DEBEMAIL="John Smith <john@example.com>"
+DEBEMAIL="Paul Bone <paul@bone.id.au>"
 BUILDSOURCEROOTCMD=fakeroot
 
 # Codenames for Debian suites according to their alias. Update these when
@@ -21,8 +21,8 @@ DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BAC
 UBUNTU_SUITES=("disco" "bionic" "xenial")
 
 # Mirrors to use. Update these to your preferred mirror.
-DEBIAN_MIRROR="http://mirror.internode.on.net/pub"
-UBUNTU_MIRROR="http://mirror.internode.on.net/pub"
+DEBIAN_MIRROR="http://mirror.aarnet.edu.au/pub"
+UBUNTU_MIRROR="http://mirror.aarnet.edu.au/pub"
 # DEBIAN_COMPONENTS="main contrib non-free"
 DEBIAN_COMPONENTS="main"
 # UBUNTU_COMPONENTS="main restricted universe multiverse"
