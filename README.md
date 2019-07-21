@@ -10,6 +10,15 @@ how the Mercury build system works or
 how GPG keys should be managed;
 all that can be found elsewhere.
 
+About this repo
+---------------
+
+The last stable version of Mercury is quite old (2014). For the purposes of
+providing debian packages this is considered _legacy_ and is tracked on the
+*legacy* branch.  On the *master* branch we track a recent-ish ROTD.
+
+Other branches such as *jessie4* provide backports.
+
 Setup the tools
 ---------------
 
