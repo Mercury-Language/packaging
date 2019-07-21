@@ -5,7 +5,7 @@
 # Not comptible with gcc-4.8
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all,-fortify,-stackprotectorstrong,-stackprotector
 %:
-	dh $@ --parallel
+	dh $@
 
 # Don't trust autoreconf to do this, it fucks it up, because autotools suck.
 .PHONY: autoreconf
@@ -18,12 +18,18 @@ bootstrap : autoreconf
 	DEFAULT_GRADE=hlc.gc.pregen \
 	   ./configure --prefix /tmp//mer-boot \
 		--enable-libgrades=hlc.gc.pregen
-	make install
+	make PARALLEL=-j8 install
 	make realclean
 
 override_dh_auto_configure: autoreconf bootstrap
 	PATH=$$PATH:/tmp/mer-boot/bin dh_auto_configure -- \
 		 --enable-libgrades=hlc.gc,hlc.gc.par,asm_fast.gc,asm_fast.par.gc.stseg,asm_fast.gc.decldebug.stseg,asm_fast.gc.trseg,asm_fast.gc.profdeep.stseg,hlc.gc.trseg,asm_fast.gc.memprof.stseg,asm_fast.gc.prof.stseg
+
+override_dh_auto_build:
+	make PARALLEL=-j8 all
+
+override_dh_auto_install:
+	PARALLEL=-j8 dh_auto_install
 
 override_dh_auto_clean:
 	chmod a-x samples extras benchmarks
