@@ -1,3 +1,9 @@
+mercury-rotd (20181114-4) mercury-stretch; urgency=low
+
+  * Fix how version number is set & compiled in
+
+ -- Paul Bone <paul@bone.id.au>  Fri, 26 Jul 2019 23:04:00 +1100
+
 mercury-rotd (20181114-3) mercury-stretch; urgency=low
 
   * Add missing texlive build dependency

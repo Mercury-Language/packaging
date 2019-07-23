@@ -70,7 +70,7 @@ Description: Mercury programming language garbage collector
 Package: mercury-rotd-gc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc (= 20181114-3)
+Depends: ${misc:Depends}, mercury-rotd-gc (= ${binary:Version})
 Recommends: mercury-rotd-tools
 Conflicts: mercury-gc-dev
 Description: Mercury programming language garbage collector
@@ -91,7 +91,7 @@ Description: Mercury programming language garbage collector
 Package: mercury-rotd-hlc
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= 20181114-3)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
 Conflicts: mercury-hlc
 Description: Mercury programming language runtime (hlc.gc)
  Mercury is a logic/functional programming language which combines the clarity
@@ -110,9 +110,9 @@ Description: Mercury programming language runtime (hlc.gc)
 Package: mercury-rotd-hlc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc-dev (= 20181114-3),
-  mercury-rotd-hlc (= 20181114-3)
-Recommends: mercury-rotd-tools (= 20181114-3)
+Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
+  mercury-rotd-hlc (= ${binary:Version})
+Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-hlc-dev
 Description: Mercury programming language development files (hlc.gc)
  Mercury is a logic/functional programming language which combines the clarity
@@ -131,7 +131,7 @@ Description: Mercury programming language development files (hlc.gc)
 Package: mercury-rotd-hlcpar
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= 20181114-3)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
 Conflicts: mercury-hlcpar
 Description: Mercury programming language runtime (hlc.par.gc)
  Mercury is a logic/functional programming language which combines the clarity
@@ -151,8 +151,8 @@ Package: mercury-rotd-hlcpar-dev
 Architecture: i386 amd64
 Section: libdevel
 Depends: ${misc:Depends}, libhwloc-dev, 
-  mercury-rotd-gc-dev (= 20181114-3), mercury-rotd-hlcpar (= 20181114-3)
-Recommends: mercury-rotd-tools (= 20181114-3)
+  mercury-rotd-gc-dev (= ${binary:Version}), mercury-rotd-hlcpar (= ${binary:Version})
+Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-hlcpar-dev
 Description: Mercury programming language development files (hlc.par.gc)
  Mercury is a logic/functional programming language which combines the clarity
@@ -171,7 +171,7 @@ Description: Mercury programming language development files (hlc.par.gc)
 Package: mercury-rotd-hlctrail
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= 20181114-3)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
 Conflicts: mercury-hlctrail
 Description: Mercury programming language runtime (hlc.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
@@ -190,9 +190,9 @@ Description: Mercury programming language runtime (hlc.gc.trseg)
 Package: mercury-rotd-hlctrail-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc-dev (= 20181114-3),
-  mercury-rotd-hlctrail (= 20181114-3)
-Recommends: mercury-rotd-tools (= 20181114-3)
+Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
+  mercury-rotd-hlctrail (= ${binary:Version})
+Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-hlctrail-dev
 Description: Mercury programming language development files (hlc.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
@@ -211,7 +211,7 @@ Description: Mercury programming language development files (hlc.gc.trseg)
 Package: mercury-rotd-llc
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= 20181114-3)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
 Conflicts: mercury-llc
 Description: Mercury programming language runtime (asm_fast.gc)
  Mercury is a logic/functional programming language which combines the clarity
@@ -230,9 +230,9 @@ Description: Mercury programming language runtime (asm_fast.gc)
 Package: mercury-rotd-llc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc-dev (= 20181114-3),
-  mercury-rotd-llc (= 20181114-3)
-Recommends: mercury-rotd-tools (= 20181114-3)
+Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
+  mercury-rotd-llc (= ${binary:Version})
+Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-llc-dev
 Description: Mercury programming language development files (asm_fast.gc)
  Mercury is a logic/functional programming language which combines the clarity
@@ -251,7 +251,7 @@ Description: Mercury programming language development files (asm_fast.gc)
 Package: mercury-rotd-llcpar
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= 20181114-3)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
 Conflicts: mercury-llcpar
 Description: Mercury programming language runtime (asm_fast.par.gc.stseg)
  Mercury is a logic/functional programming language which combines the clarity
@@ -271,8 +271,8 @@ Package: mercury-rotd-llcpar-dev
 Architecture: i386 amd64
 Section: libdevel
 Depends: ${misc:Depends}, libhwloc-dev,
-  mercury-rotd-gc-dev (= 20181114-3), mercury-rotd-llcpar (= 20181114-3)
-Recommends: mercury-rotd-tools (= 20181114-3)
+  mercury-rotd-gc-dev (= ${binary:Version}), mercury-rotd-llcpar (= ${binary:Version})
+Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-llcpar-dev
 Description: Mercury programming language dev files (asm_fast.par.gc.stseg)
  Mercury is a logic/functional programming language which combines the clarity
@@ -291,7 +291,7 @@ Description: Mercury programming language dev files (asm_fast.par.gc.stseg)
 Package: mercury-rotd-llctrail
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= 20181114-3)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
 Conflicts: mercury-llctrail
 Description: Mercury programming language runtime (asm_fast.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
@@ -310,9 +310,9 @@ Description: Mercury programming language runtime (asm_fast.gc.trseg)
 Package: mercury-rotd-llctrail-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc-dev (= 20181114-3),
-  mercury-rotd-llctrail (= 20181114-3)
-Recommends: mercury-rotd-tools (= 20181114-3)
+Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
+  mercury-rotd-llctrail (= ${binary:Version})
+Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-llctrail-dev
 Description: Mercury programming language development files (asm_fast.gc.trseg)
  Mercury is a logic/functional programming language which combines the clarity
@@ -331,9 +331,9 @@ Description: Mercury programming language development files (asm_fast.gc.trseg)
 Package: mercury-rotd-devel
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= 20181114-3),
-  mercury-rotd-gc-dev (= 20181114-3), libreadline-dev
-Recommends: mercury-rotd-tools (= 20181114-3)
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version}),
+  mercury-rotd-gc-dev (= ${binary:Version}), libreadline-dev
+Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-devel
 Description: Mercury programming language debugging and profiling grades
  Mercury is a logic/functional programming language which combines the clarity
@@ -391,7 +391,7 @@ Description: Mercury programming language examples and extras
 
 Package: mercury-rotd-maintainers
 Architecture: i386 amd64
-Depends: ${misc:Depends}, ${shlibs:Depends}, make, mercury-rotd-tools (= 20181114-3)
+Depends: ${misc:Depends}, ${shlibs:Depends}, make, mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-maintainers, mmake
 Description: Mercury programming language maintainers' tools 
  Mercury is a logic/functional programming language which combines the clarity

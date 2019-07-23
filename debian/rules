@@ -10,6 +10,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all,-fortify,-stackprotectorstrong,-
 # Don't trust autoreconf to do this, it fucks it up, because autotools suck.
 .PHONY: autoreconf
 autoreconf:
+	echo "VERSION=$$(head -1 debian/changelog | sed -e "s/^.*(\(.*\)).*$$/\1/")" > VERSION
 	aclocal -I m4
 	autoconf
 
