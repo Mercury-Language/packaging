@@ -43,3 +43,6 @@ override_dh_strip:
 # Testing isn't going to work until we can fix the Mercury build system.
 override_dh_auto_test:
 
+override_dh_gencontrol:
+	dh_gencontrol -- -Tdebian/substvars
+
