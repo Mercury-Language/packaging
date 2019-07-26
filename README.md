@@ -149,10 +149,10 @@ Sign and upload these packages
 
     pushd /var/cache/pbuilder/result/
     debsign mercury_14.01.1-1_amd64.changes
-    dput mercury-stable mercury_14.01.1-1_amd64.changes
+    dput mercury mercury_14.01.1-1_amd64.changes
     popd
 
-mercury-stable is the name of the package repository to send the package to.
+mercury is the name of the package repository to send the package to.
 Note that the command doesn't say which distribution within the repository
 to add it to.  It figures this out from the changelog file within the source
 package that created these packages.
@@ -170,7 +170,7 @@ Sign and upload these packages.
 
     pushd /var/cache/pbuilder/result/
     debsign mercury_14.01.1-1_i386.changes
-    dput mercury-stable mercury_14.01.1-1_i386.changes
+    dput mercury mercury_14.01.1-1_i386.changes
     popd
 
 
