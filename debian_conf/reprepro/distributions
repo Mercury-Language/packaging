@@ -22,5 +22,14 @@ Origin: Paul Bone
 Label: Mercury Packages
 Architectures: source i386 amd64
 Components: main
-Description: Mercury packages for Debian Stretch
+Description: Mercury packages for Debian Buster
+SignWith: BDF4EAD2
+
+Codename: mercury-disco
+Suite: disco
+Origin: Paul Bone
+Label: Mercury Packages
+Architectures: source i386 amd64
+Components: main
+Description: Mercury packages for Ubuntu 19.04 
 SignWith: BDF4EAD2
