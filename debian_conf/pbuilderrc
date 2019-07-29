@@ -21,8 +21,8 @@ DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BAC
 UBUNTU_SUITES=("disco" "bionic" "xenial")
 
 # Mirrors to use. Update these to your preferred mirror.
-DEBIAN_MIRROR="http://mirror.aarnet.edu.au/pub"
-UBUNTU_MIRROR="http://mirror.aarnet.edu.au/pub"
+DEBIAN_MIRROR="http://mirror.aarnet.edu.au/pub/debian/"
+UBUNTU_MIRROR="http://mirror.aarnet.edu.au/pub/ubuntu/archive/"
 # DEBIAN_COMPONENTS="main contrib non-free"
 DEBIAN_COMPONENTS="main"
 # UBUNTU_COMPONENTS="main restricted universe multiverse"
@@ -68,7 +68,7 @@ BUILDPLACE="/var/cache/pbuilder/build/"
 
 if $(echo ${DEBIAN_SUITES[@]} | grep -q $DIST); then
     # Debian configuration
-    MIRRORSITE="$DEBIAN_MIRROR/debian/"
+    MIRRORSITE="$DEBIAN_MIRROR"
     COMPONENTS=$DEBIAN_COMPONENTS
 
     # I (paul) don't know what this is for.
@@ -77,7 +77,7 @@ if $(echo ${DEBIAN_SUITES[@]} | grep -q $DIST); then
     fi
 elif $(echo ${UBUNTU_SUITES[@]} | grep -q $DIST); then
     # Ubuntu configuration
-    MIRRORSITE="$UBUNTU_MIRROR/ubuntu/"
+    MIRRORSITE="$UBUNTU_MIRROR"
     COMPONENTS=$UBUNTU_COMPONENTS
 else
     echo "Unknown distribution: $DIST"
