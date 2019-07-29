@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title>Mercury packages for .deb based systems</title>
+</head>
+<body>
+
+<h1>Mercury packages for .deb based systems</h1>
+
+<p>
+Please <a href="https://github.com/Mercury-Language/packaging/issues">
+let us know</a> if there are problems.
+<p>
+
+<h2>What's supported?</h2>
+<p>
+Currently packages for Mercury 14.01.1 on Debian jessie (oldstable) and
+stretch (stable) on amd64 and i386, and Mercury ROTD 2018-11-14 on Debian
+stretch (amd64 only).
+</p>
+<p>
+You might find that even if you don't have the exact Debian version I've
+built the packages for they work anyway.  Mercury has few dependencies so
+this is quite likely.  For example the Debian jessie packages work on my
+Mint desktop.
+</p>
+<p>
+The packaged version of Mercury contains a reasonable number of grades for
+the C backends.  It does not contain the Java, C# or Erlang backends.
+The included grades are.
+</p>
+
+<ul>
+  <li>asm_fast.gc</li>
+  <li>asm_fast.par.gc.stseg</li>
+  <li>asm_fast.gc.trseg</li>
+  <li>hlc.gc</li>
+  <li>hlc.par.gc</li>
+  <li>hlc.gc.trseg</li>
+  <li>asm_fast.gc.decldebug.stseg</li>
+  <li>asm_fast.gc.profdeep.stseg</li>
+  <li>asm_fast.gc.memprof.stseg</li>
+  <li>asm_fast.gc.prof.stseg</li>
+</ul>
+
+<p>
+Depending on the C compiler some packages use "reg" grades rather than
+"asm_fast" grades.
+</p>
+
+<p>
+There are two groups of packages to choose from.
+The stable version of Mercury's packages begin with "mercury", a more recent
+snapshot begins with "mercury-rotd".
+</p>
+
+<p>
+This Mercury has been bootstrapped (the compiler is built with 3 tag bits
+and other settings) and separated into multiple packages.
+It does not support multiple concurrent installation versions, nor do the
+dynamic libraries support this.
+As always, make sure that there is no other version of Mercury in your
+<code>$PATH</code>, you can run into 
+<a href="https://bugs.mercurylang.org/view.php?id=433">problems</a>.
+</p>
+
+<h2>Okay, hook me up!</h2>
+
+<p>
+First download <a href="https://paul.bone.id.au/paul.asc">my GPG key</a> and
+tell your Debian based system that you trust me.
+This command means that you are authorising your computer to download any
+software I publish in this repository, like Debian itself.
+</p>
+
+<code><pre>
+cd /tmp
+wget <a href="https://paul.bone.id.au/paul.asc">https://paul.bone.id.au/paul.asc</a>
+sudo apt-key add paul.asc
+</pre></code>
+
+<p>
+Now tell your system where the repository is.
+Create a new file in <code>/etc/apt/sources.list.d</code>, name it
+<code>mercury.list</code> and paste in it:
+</p>
+
+<code><pre>
+deb http://dl.mercurylang.org/deb/ <i>DISTRO</i> main
+deb-src http://dl.mercurylang.org/deb/ <i>DISTRO</i> main
+</pre></code>
+
+<p>
+Replace <i>DISTRO</i> with either <code>jessie</code> or
+<code>stretch</code> depending on your OS version:
+</p>
+
+<table>
+  <tr><th>You have</th><th>Then use</th></tr>
+  <tr><td>Debian 8 (jessie)</td><td>jessie</td></tr>
+  <tr><td>Debian 9 (stretch)</td><td>stretch</td></tr>
+  <tr><td>Ubuntu 16.04 (xenial)</td><td>jessie</td></tr>
+  <tr><td>Ubuntu 18.04 (bionic)</td><td>stretch</td></tr>
+  <tr><td>Mint 18</td><td>jessie</td></tr>
+  <tr><td>Mint 19</td><td>stretch</td></tr>
+</table>
+
+<p>
+If your OS version isn't listed,
+then try the jessie packages first, they use the faster low-level-C grades
+but require gcc-4.8 specifically.
+If you wish to use "mercury-rotd" the you'll need the "stretch" packages.
+</p>
+
+<p>
+Update your packages list.
+</p>
+
+<code><pre>
+sudo apt update
+</pre></code>
+
+<p>
+Either browse the packages or install
+<code>mercury-recommended</code> which will install a reasonable set of
+Mercury packages for most developers.
+</p>
+
+<code><pre>
+sudo apt install mercury-recommended
+</pre></code>
+
+or for a recent ROTD version of Mercury:
+
+<code><pre>
+sudo apt install mercury-rotd-recommended
+</pre></code>
+
+<p>
+Or choose specific packages to install.  You can see a list with the
+command:
+</p>
+
+<code><pre>
+apt-cache showsrc mercury
+</pre></code>
+
+<h2>More info</h2>
+
+Notes on maintaining these packages are kept
+<a href="https://github.com/Mercury-Language/packaging">on github</a>.
+
+</body>
+</html>
