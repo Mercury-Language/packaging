@@ -73,6 +73,7 @@ software I publish in this repository, like Debian itself.
 </p>
 
 <code><pre>
+sudo apt install wget ca-certificates gnupg
 cd /tmp
 wget <a href="https://paul.bone.id.au/paul.asc">https://paul.bone.id.au/paul.asc</a>
 sudo apt-key add paul.asc
@@ -109,6 +110,10 @@ If your OS version isn't listed,
 then try the jessie packages first, they use the faster low-level-C grades
 but require gcc-4.8 specifically.
 If you wish to use "mercury-rotd" the you'll need the "stretch" packages.
+</p>
+
+<p>
+Note that Ubuntu and derivatives must have the universe package enabled.
 </p>
 
 <p>
