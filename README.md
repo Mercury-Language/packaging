@@ -125,9 +125,18 @@ that in the package name so we remove it.
     mv mercury-{srcdist-,}14.01.1
     tar -zcf mercury_14.01.1.orig.tar.gz
 
-Copy the debian directory from this repository into place.
+Copy the debian directory from this repository into place and add a new
+changelog entry.
 
     cp -r packaging/debian mercury-14.01.1/debian
+    (cd mercury-14.01.1; dch -v 14.01.1-1)
+
+Check that patches apply properly, in a loop do:
+
+    dquilt push -f
+    // Fix the rejects
+    dquilt refresh
+
 
 Build the source package
 
