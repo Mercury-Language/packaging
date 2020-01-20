@@ -1,0 +1,26 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -3837,13 +3837,8 @@
+     # Add `.trseg' (--use-trail --trail-segments) grades.
+     # We don't install the fixed size trail `.tr' grades by
+     # default as they are less useful.
+-    LIBGRADES="$LIBGRADES $DEFAULT_BASE_GRADE.gc.trseg"
+-    if test $DEFAULT_BASE_GRADE = hlc; then
+-        LIBGRADES="$LIBGRADES $BEST_LLDS_BASE_GRADE.gc.debug.trseg.stseg"
+-    else
+-        # $DEFAULT_BASE_GRADE must be an LLDS grade
+-        LIBGRADES="$LIBGRADES $DEFAULT_BASE_GRADE.gc.debug.trseg.stseg hlc.gc.trseg"
+-    fi
++    LIBGRADES="$LIBGRADES $BEST_LLDS_BASE_GRADE.gc.trseg hlc.gc.trseg"
++
+     if test "$enable_inefficient_grades" = yes; then
+         if test "$enable_nogc_grades" = yes; then
+             LIBGRADES="$LIBGRADES $DEFAULT_BASE_GRADE.trseg"
+@@ -3884,7 +3879,6 @@
+ # By default, we also use stack segments in debugging grades.
+ #
+ if test "$enable_debug_grades" = yes; then
+-    LIBGRADES="$LIBGRADES $BEST_DEBUG_BASE_GRADE.gc.debug.stseg"
+     if test "$enable_decl_debug_grades" = yes; then
+         LIBGRADES="$LIBGRADES $BEST_DEBUG_BASE_GRADE.gc.decldebug.stseg"
+     fi

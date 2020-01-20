@@ -24,7 +24,7 @@ bootstrap : autoreconf
 
 override_dh_auto_configure: autoreconf bootstrap
 	PATH=$$PATH:/tmp/mer-boot/bin dh_auto_configure -- \
-		 --enable-libgrades=hlc.gc,hlc.gc.par,asm_fast.gc,asm_fast.par.gc.stseg,asm_fast.gc.decldebug.stseg,asm_fast.gc.trseg,asm_fast.gc.profdeep.stseg,hlc.gc.trseg,asm_fast.gc.memprof.stseg,asm_fast.gc.prof.stseg
+		--disable-csharp-grade --disable-java-grade
 
 override_dh_auto_build:
 	make PARALLEL=-j8 all

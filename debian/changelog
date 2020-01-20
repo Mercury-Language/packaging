@@ -1,3 +1,9 @@
+mercury-rotd (20200108-2) UNRELEASED; urgency=medium
+
+  * Modify the way grades are configured
+
+ -- Paul Bone <paul@bone.id.au>  Mon, 20 Jan 2020 22:46:15 +1100
+
 mercury-rotd (20200108-1) mercury-buster; urgency=medium
 
   * Update upstream version
