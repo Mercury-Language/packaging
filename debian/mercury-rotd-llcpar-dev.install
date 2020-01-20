@@ -1,4 +1,11 @@
-usr/lib/mercury/ints/asm_fast.par.gc.stseg
-usr/lib/mercury/lib/asm_fast.par.gc.stseg/*.a
-usr/lib/mercury/lib/asm_fast.par.gc.stseg/inc
-usr/lib/mercury/modules/asm_fast.par.gc.stseg
+#!/bin/sh -e
+
+for grade in asm_fast reg none; do
+    if [ -e debian/tmp/usr/lib/mercury/ints/$grade.par.gc.stseg ]; then
+        echo usr/lib/mercury/ints/$grade.par.gc.stseg
+        find debian/tmp/usr/lib/mercury/lib/$grade.par.gc.stseg/ -name \*.a
+        echo usr/lib/mercury/lib/$grade.par.gc.stseg/inc
+        echo usr/lib/mercury/modules/$grade.par.gc.stseg
+    fi
+done
+

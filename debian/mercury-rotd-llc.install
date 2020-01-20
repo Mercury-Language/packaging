@@ -1,2 +1,8 @@
-usr/lib/mercury/lib/asm_fast.gc/libmer_rt.so
-usr/lib/mercury/lib/asm_fast.gc/libmer_std.so
+#!/bin/sh -e
+
+for grade in asm_fast reg none; do
+    if [ -e debian/tmp/usr/lib/mercury/lib/$grade.gc/libmer_rt.so ]; then
+        echo usr/lib/mercury/lib/$grade.gc/libmer_rt.so
+        echo usr/lib/mercury/lib/$grade.gc/libmer_std.so
+    fi
+done
