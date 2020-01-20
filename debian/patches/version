@@ -3,7 +3,7 @@ Update version number
 +++ b/README
 @@ -1,5 +1,5 @@
  This directory contains the source distribution for the University of Melbourne
--Mercury compiler, version rotd-2018-11-14.
+-Mercury compiler, version rotd-2020-01-08.
 +Mercury compiler.
  
  See the file LICENSE for copyright and licensing information.

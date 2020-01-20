@@ -1,3 +1,9 @@
+mercury-rotd (20200108-1) mercury-buster; urgency=medium
+
+  * Update upstream version
+
+ -- Paul Bone <paul@bone.id.au>  Sun, 19 Jan 2020 16:21:42 +1100
+
 mercury-rotd (20181114-5) mercury-stretch; urgency=low
 
   * Fix how version number is set & compiled in
