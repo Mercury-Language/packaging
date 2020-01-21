@@ -1,6 +1,7 @@
 mercury-rotd (20200108-2) UNRELEASED; urgency=medium
 
   * Modify the way grades are configured
+  * Upgrade to debian compat level 10
 
  -- Paul Bone <paul@bone.id.au>  Mon, 20 Jan 2020 22:46:15 +1100
 

@@ -2,7 +2,7 @@ Source: mercury-rotd
 Section: devel
 Priority: optional
 Maintainer: Paul Bone <paul@bone.id.au>
-Build-Depends: debhelper (>=9.20160114), autoconf, automake, flex, bison,
+Build-Depends: debhelper (>=10), autoconf, automake, flex, bison,
   libreadline-dev, texinfo, texi2html, texlive, libhwloc-dev, pkg-config
 Standards-Version: 3.9.7
 Homepage: http://mercurylang.org

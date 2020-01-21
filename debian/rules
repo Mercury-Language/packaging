@@ -7,30 +7,32 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all,-fortify,-stackprotectorstrong,-
 %:
 	dh $@
 
-# Don't trust autoreconf to do this, it fucks it up, because autotools suck.
-.PHONY: autoreconf
-autoreconf:
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+    NUMJOBS=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+endif
+
+override_dh_autoreconf:
 	echo "VERSION=$$(head -1 debian/changelog | sed -e "s/^.*(\(.*\)).*$$/\1/")" > VERSION
 	aclocal -I m4
 	autoconf
 
 .PHONY: bootstrap
-bootstrap : autoreconf
+bootstrap :
 	DEFAULT_GRADE=hlc.gc.pregen \
 	   ./configure --prefix /tmp//mer-boot \
 		--enable-libgrades=hlc.gc.pregen
-	make PARALLEL=-j8 install
+	make PARALLEL=-j$(NUMJOBS) install
 	make realclean
 
-override_dh_auto_configure: autoreconf bootstrap
+override_dh_auto_configure: bootstrap
 	PATH=$$PATH:/tmp/mer-boot/bin dh_auto_configure -- \
 		--disable-csharp-grade --disable-java-grade
 
 override_dh_auto_build:
-	make PARALLEL=-j8 all
+	make PARALLEL=-j$(NUMJOBS) all
 
 override_dh_auto_install:
-	PARALLEL=-j8 dh_auto_install
+	PARALLEL=-j$(NUMJOBS) dh_auto_install
 
 override_dh_auto_clean:
 	chmod a-x samples extras benchmarks
