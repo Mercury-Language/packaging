@@ -1,6 +1,10 @@
 How to make a Debian binary package
 ===================================
 
+The Debian/.deb packages are published at
+on the [Mercury Downloads](http://dl.mercurylang.org/deb/) site.
+This repository and README.md file documents how they're built.
+
 Read all the instructions before you begin.  This will cover building
 packages and maintaining the repository.  It won't explain how Debian
 packages are/should be built (see the
