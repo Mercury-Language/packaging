@@ -6,4 +6,5 @@ Mercury for the following systems/formats:
 
  * [Debian / other .deb systems](README-deb.md)
  * [Redhat](README-rpm.md) (Quite old, not sure if it covers Centos etc).
+ * [Docker](docker) (based on the debian packages)
 
