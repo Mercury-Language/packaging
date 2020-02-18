@@ -12,5 +12,11 @@ RUN apt-key add paul.asc
 COPY mercury.list /etc/apt/sources.list.d/
 
 RUN apt-get update
-RUN apt-get install -yqq mercury-rotd-recommended
+
+# Install some mercury dependencies, this creates another docker layer
+# allowing some caching.
+RUN apt-get install -yqq gcc perl libreadline-dev libhwloc-dev
+
+# Install a minimal set of Mercury grades
+RUN apt-get install -yqq mercury-rotd-tools mercury-rotd-llc-dev
 
