@@ -133,10 +133,21 @@ changelog entry.
 
 Check that patches apply properly, in a loop do:
 
+    // Apply patch
     dquilt push -f
+
     // Fix the rejects
+    ...
+
+    // remove reject files.
+    ...
+
+    // Update patch
     dquilt refresh
 
+Unapply all patches (optional):
+
+    dquilt pop -a
 
 Build the source package
 
