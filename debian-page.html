@@ -12,21 +12,41 @@ let us know</a> if there are problems.
 <p>
 
 <h2>What's supported?</h2>
+
+Mercury versions:<br/>
+<ul>
+  <li>Mercury 20.01.1</li>
+  <li>Mercury ROTD 2020-01-08</li>
+</ul>
+
+Architectures:<br/>
+<ul>
+  <li>amd64</li>
+  <li>i386 (No ROTD, stable is 14.01.1)</li>
+</ul>
+
+OSs with direct support:<br/>
+<ul>
+  <li>Debian 10 (buster)</li>
+  <li>Debian 9 (stretch)</li>
+  <li>Ubuntu 19.04 disco</li>
+</ul>
+
 <p>
-Currently packages for Mercury 14.01.1 on Debian jessie (oldstable) and
-stretch (stable) on amd64 and i386, and Mercury ROTD 2018-11-14 on Debian
-stretch (amd64 only).
+We build on the above OSs, but often these packages will work on other
+Debian/Ubuntu versions.  For example the 'stretch' versions work on Ubuntu
+18.04 and Mint 19.
 </p>
+
 <p>
-You might find that even if you don't have the exact Debian version I've
-built the packages for they work anyway.  Mercury has few dependencies so
-this is quite likely.  For example the Debian jessie packages work on my
-Mint desktop.
+Support has been remove for Debian 8 (jessie) and Ubuntu 16.04,
+if you need them file an issue and I can make a backport.
 </p>
+
 <p>
 The packaged version of Mercury contains a reasonable number of grades for
 the C backends.  It does not contain the Java, C# or Erlang backends.
-The included grades are.
+The included grades are:
 </p>
 
 <ul>
@@ -92,27 +112,22 @@ deb-src http://dl.mercurylang.org/deb/ <i>DISTRO</i> main
 
 <p>
 Depending on your OS version
-replace <i>DISTRO</i> with one of: <code>jessie</code>,
+replace <i>DISTRO</i> with one of:
 <code>stretch</code>, <code>buster</code> or <code>disco</code>.
 </p>
 
 <table>
   <tr><th>You have</th><th>Then use</th></tr>
-  <tr><td>Debian 8 (jessie)</td><td>jessie</td></tr>
   <tr><td>Debian 9 (stretch)</td><td>stretch</td></tr>
   <tr><td>Debian 10 (buster)</td><td>buster</td></tr>
-  <tr><td>Ubuntu 16.04 (xenial)</td><td>jessie</td></tr>
   <tr><td>Ubuntu 18.04 (bionic)</td><td>stretch</td></tr>
   <tr><td>Ubuntu 19.04 (disco)</td><td>disco</td></tr>
-  <tr><td>Mint 18</td><td>jessie</td></tr>
   <tr><td>Mint 19</td><td>stretch</td></tr>
 </table>
 
 <p>
-If your OS version isn't listed,
-then try the jessie packages first, they use the faster low-level-C grades
-but require gcc-4.8 specifically.
-If you wish to use "mercury-rotd" the you'll need the "stretch" packages.
+If your OS version isn't listed then try some of the others, depending on
+what dependencies you have available.
 </p>
 
 <p>
