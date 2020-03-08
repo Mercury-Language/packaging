@@ -133,7 +133,8 @@ Copy the debian directory from this repository into place and add a new
 changelog entry.
 
     cp -r packaging/debian mercury-14.01.1/debian
-    (cd mercury-14.01.1; dch -v 14.01.1-1)
+    cd mercury-14.01.1
+    dch -v 14.01.1-1)
 
 Check that patches apply properly, in a loop do:
 
@@ -155,6 +156,7 @@ Unapply all patches (optional):
 
 Build the source package
 
+    cd ..
     dpkg-source -b mercury-14.01.1
 
 Use this to build a new source package and binary packages for amd64.
