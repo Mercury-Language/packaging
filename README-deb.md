@@ -127,6 +127,12 @@ that in the package name so we remove it.
     mv mercury-{srcdist-,}14.01.1
     tar -zcf mercury_14.01.1.orig.tar.gz
 
+Or for ROTDs, note also -J for xz compression:
+
+    tar -Jxf ~/hdd/mercury/dl1/rotd/mercury-srcdist-rotd-2020-05-31.tar.xz
+    mv mercury-srcdist-rotd-2020-05-31/ mercury-rotd-20200531/
+    tar -Jcf mercury-rotd_20200531.orig.tar.xz mercury-rotd-20200531/
+
 Copy the debian directory from this repository into place and add a new
 changelog entry.
 
