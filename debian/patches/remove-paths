@@ -3,18 +3,12 @@ Mercury.
 
 --- a/README
 +++ b/README
-@@ -22,12 +22,8 @@
+@@ -21,8 +21,6 @@
+ 	README.Solaris		Solaris (SunOS) on SPARC or Intel x86.
  
- The documentation sources are in the `doc' subdirectory.  The installation
- process will install INFO, HTML, and DVI versions in the locations specified
--in the file Mmake.common - by default these locations are
--/usr/local/mercury-rotd-2020-01-08/info,
--/usr/local/mercury-rotd-2020-01-08/lib/mercury/html,
--and /usr/local/mercury-rotd-2020-01-08/lib/mercury/doc respectively.
--The installation process will also install Unix-style man pages -
--by default they will be installed in /usr/local/mercury-rotd-2020-01-08/man/man1.
-+in the file Mmake.common.
-+The installation process will also install Unix-style man pages.
+ The documentation sources are in the `doc' subdirectory.
+-The installation process will install INFO, HTML, and DVI versions under the
+-nominated installation prefix, by default /usr/local/mercury-rotd-2020-05-31.
+ It will also install Unix-style man pages under the same prefix.
+ 
  The files RELEASE_NOTES, NEWS, HISTORY, LIMITATIONS, and BUGS
- also contain useful information.  If you're interested in looking
- at the source code, the file compiler/notes/compiler_design.html is

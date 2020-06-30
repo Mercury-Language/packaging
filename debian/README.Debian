@@ -11,10 +11,10 @@ The following grades are available:
 
     hlc.gc                          mercury-hlc
     hlc.par.gc                      mercury-hlcpar
-    hlc.gc.trseg                    mercury-hlctrail
+    hlc.gc.tr                       mercury-hlctrail
     asm_fast.gc                     mercury-llc 
     asm_fast.par.gc.stseg           mercury-llcpar
-    asm_fast.gc.trseg               mercury-llctrail
+    asm_fast.gc.tr                  mercury-llctrail
     asm_fast.gc.decldebug.stseg     mercury-devel
     asm_fast.gc.profdeep.stseg      mercury-devel
     asm_fast.gc.memprof.stseg       mercury-devel

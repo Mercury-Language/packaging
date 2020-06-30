@@ -1,9 +1,9 @@
 #!/bin/sh -e
 
 for grade in asm_fast reg none; do
-    if [ -e debian/tmp/usr/lib/mercury/lib/$grade.gc.trseg/libmer_rt.so ]; then
-        echo usr/lib/mercury/lib/$grade.gc.trseg/libmer_rt.so
-        echo usr/lib/mercury/lib/$grade.gc.trseg/libmer_std.so
+    if [ -e debian/tmp/usr/lib/mercury/lib/$grade.gc.tr/libmer_rt.so ]; then
+        echo usr/lib/mercury/lib/$grade.gc.tr/libmer_rt.so
+        echo usr/lib/mercury/lib/$grade.gc.tr/libmer_std.so
     fi
 done
 

@@ -2,9 +2,9 @@ Update version number
 --- a/README
 +++ b/README
 @@ -1,5 +1,5 @@
- This directory contains the source distribution for the University of Melbourne
--Mercury compiler, version rotd-2020-01-08.
-+Mercury compiler.
+ This directory contains the source distribution for the
+-Melbourne Mercury compiler, version rotd-2020-05-31.
++Melbourne Mercury compiler.
  
  See the file LICENSE for copyright and licensing information.
  

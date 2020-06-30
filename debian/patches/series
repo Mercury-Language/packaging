@@ -2,3 +2,4 @@
 version
 remove-paths
 grades
+no-realclean-tests

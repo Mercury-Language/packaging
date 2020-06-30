@@ -1,4 +1,4 @@
-usr/lib/mercury/ints/hlc.gc.trseg
-usr/lib/mercury/lib/hlc.gc.trseg/*.a
-usr/lib/mercury/lib/hlc.gc.trseg/inc
-usr/lib/mercury/modules/hlc.gc.trseg
+usr/lib/mercury/ints/hlc.gc.tr
+usr/lib/mercury/lib/hlc.gc.tr/*.a
+usr/lib/mercury/lib/hlc.gc.tr/inc
+usr/lib/mercury/modules/hlc.gc.tr

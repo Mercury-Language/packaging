@@ -109,11 +109,11 @@ Architecture: i386 amd64
 Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
 Conflicts: mercury-hlctrail
-Description: Mercury programming language runtime (hlc.gc.trseg)
+Description: Mercury programming language runtime (hlc.gc.tr)
  ${about-mercury}
  .
  This package contains dynamic libraries for Mercury programs built in the
- hlc.gc.trseg grade.
+ hlc.gc.tr grade.
 
 Package: mercury-rotd-hlctrail-dev
 Architecture: i386 amd64
@@ -122,11 +122,11 @@ Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
   mercury-rotd-hlctrail (= ${binary:Version})
 Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-hlctrail-dev
-Description: Mercury programming language development files (hlc.gc.trseg)
+Description: Mercury programming language development files (hlc.gc.tr)
  ${about-mercury}
  .
  This package contains header files, interface files and static libraries for
- the hlc.gc.trseg grade.
+ the hlc.gc.tr grade.
 
 Package: mercury-rotd-llc
 Architecture: i386 amd64
@@ -181,11 +181,11 @@ Architecture: i386 amd64
 Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
 Conflicts: mercury-llctrail
-Description: Mercury programming language runtime (asm_fast.gc.trseg)
+Description: Mercury programming language runtime (asm_fast.gc.tr)
  ${about-mercury}
  .
  This package contains dynamic libraries for Mercury programs built in the
- asm_fast.gc.trseg grade.
+ asm_fast.gc.tr grade.
 
 Package: mercury-rotd-llctrail-dev
 Architecture: i386 amd64
@@ -194,11 +194,11 @@ Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
   mercury-rotd-llctrail (= ${binary:Version})
 Recommends: mercury-rotd-tools (= ${binary:Version})
 Conflicts: mercury-llctrail-dev
-Description: Mercury programming language development files (asm_fast.gc.trseg)
+Description: Mercury programming language development files (asm_fast.gc.tr)
  ${about-mercury}
  .
  This package contains header files, interface files and static libraries for
- the asm_fast.gc.trseg grade.
+ the asm_fast.gc.tr grade.
 
 Package: mercury-rotd-devel
 Architecture: i386 amd64

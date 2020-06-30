@@ -1,11 +1,11 @@
 #!/bin/sh -e
 
 for grade in asm_fast reg none; do
-    if [ -e debian/tmp/usr/lib/mercury/ints/$grade.gc.trseg ]; then
-        echo usr/lib/mercury/ints/$grade.gc.trseg
-        find debian/tmp/usr/lib/mercury/lib/$grade.gc.trseg/ -name \*.a
-        echo usr/lib/mercury/lib/$grade.gc.trseg/inc
-        echo usr/lib/mercury/modules/$grade.gc.trseg
+    if [ -e debian/tmp/usr/lib/mercury/ints/$grade.gc.tr ]; then
+        echo usr/lib/mercury/ints/$grade.gc.tr
+        find debian/tmp/usr/lib/mercury/lib/$grade.gc.tr/ -name \*.a
+        echo usr/lib/mercury/lib/$grade.gc.tr/inc
+        echo usr/lib/mercury/modules/$grade.gc.tr
     fi
 done
 
