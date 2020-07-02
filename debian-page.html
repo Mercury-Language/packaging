@@ -15,14 +15,14 @@ let us know</a> if there are problems.
 
 Mercury versions:<br/>
 <ul>
-  <li>Mercury 20.01.1</li>
-  <li>Mercury ROTD 2020-01-08</li>
+  <li>Mercury 20.01.1 (mercury-* packages)</li>
+  <li>Mercury ROTD 2020-05-31 (mercury-rotd-* packages)</li>
 </ul>
 
 Architectures:<br/>
 <ul>
   <li>amd64</li>
-  <li>i386 (No ROTD, stable is 14.01.1)</li>
+  <li>i386 (But not Ubuntu distros)</li>
 </ul>
 
 OSs with direct support:<br/>
@@ -41,7 +41,7 @@ Debian/Ubuntu versions.  For example the 'stretch' versions work on Ubuntu
 </p>
 
 <p>
-Support has been remove for Debian 8 (jessie) and Ubuntu 16.04,
+Support has been removed for Debian 8 (jessie) and Ubuntu 16.04,
 if you need them file an issue and I can make a backport.
 </p>
 
@@ -54,10 +54,10 @@ The included grades are:
 <ul>
   <li>asm_fast.gc</li>
   <li>asm_fast.par.gc.stseg</li>
-  <li>asm_fast.gc.trseg</li>
+  <li>asm_fast.gc.tr</li>
   <li>hlc.gc</li>
   <li>hlc.par.gc</li>
-  <li>hlc.gc.trseg</li>
+  <li>hlc.gc.tr</li>
   <li>asm_fast.gc.decldebug.stseg</li>
   <li>asm_fast.gc.profdeep.stseg</li>
   <li>asm_fast.gc.memprof.stseg</li>
@@ -65,7 +65,7 @@ The included grades are:
 </ul>
 
 <p>
-Depending on the C compiler some packages use "reg" grades rather than
+Depending on the C compiler some packages may use "reg" grades rather than
 "asm_fast" grades.
 </p>
 
