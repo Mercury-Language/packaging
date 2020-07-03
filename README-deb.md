@@ -218,6 +218,23 @@ releases, such as jessie, are backports of this version and hence have
 "jessieN" at the end.
 
 
+### Converting an rotd package to a release package:
+
+The files in debian/ are setup to build an -rotd package.  To build a
+non-rotd package follow the steps above but before building the source
+package you also must:
+
+ * Rename package names in debian/control
+ * Rename the lastest package name in debian/changelog, the version may
+   move backwards, dch will give a warning but the -b flag will ignore the
+   warning.
+ * Rename the various .install and other files:
+
+    for name in mercury-rotd*; do
+        mv $name $(echo $name | sed -e 's/-rotd//');
+    done
+
+
 Update the repository
 ---------------------
 
