@@ -95,10 +95,10 @@ software I publish.
 </p>
 
 <code><pre>
-sudo apt install wget ca-certificates gnupg
+sudo apt install wget ca-certificates
 cd /tmp
-wget <a href="https://paul.bone.id.au/paul.asc">https://paul.bone.id.au/paul.asc</a>
-sudo apt-key add paul.asc
+wget <a href="https://paul.bone.id.au/paul.gpg">https://paul.bone.id.au/paul.gpg</a>
+sudo cp paul.gpg /etc/apt/trusted.gpg.d/paul-6507444DBDF4EAD2.gpg
 </pre></code>
 
 <p>

@@ -12,8 +12,6 @@ RUN ./install.sh \
     libreadline-dev \
     perl
 
-RUN ./install.sh gnupg
-COPY paul.asc .
-RUN apt-key add paul.asc
+COPY paul.gpg /etc/apt/trusted.gpg.d/paul-6507444DBDF4EAD2.gpg
 COPY mercury.list /etc/apt/sources.list.d/
 
