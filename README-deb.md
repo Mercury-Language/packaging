@@ -235,6 +235,20 @@ package you also must:
     done
 
 
+### Adding a new version of a distro
+
+These are breif notes, I'll fill them out next time I need to do this.  But
+what I can recall right now.
+
+ * Update ~/.pbuilderrc and the repository copy.
+ * Make a new pbuilder image (or two for different architectures).
+ * Make packages, remember to set the distro line in their changelog.
+ * Add the packages to reprepro's configuration, update it in the repository
+   also.
+ * Run `reprepro createsymlinks`
+ * Run `dput` and `repreprp processincoming` as normal
+
+
 Update the repository
 ---------------------
 
