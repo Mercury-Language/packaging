@@ -1,3 +1,10 @@
+mercury-rotd (20200531-2) mercury-buster; urgency=low
+
+  * Remove a bad .orig file from debian/
+  * Remove dependency on texi2html (Bug #7)
+
+ -- Paul Bone <paul@bone.id.au>  Thu, 02 Jul 2020 23:00:18 +1000
+
 mercury-rotd (20200531-1) mercury-buster; urgency=medium
 
   * Update upstream version
