@@ -35,7 +35,7 @@ UBUNTU_MIRROR="http://mirror.aarnet.edu.au/pub/ubuntu/archive/"
 # DEBIAN_COMPONENTS="main contrib non-free"
 DEBIAN_COMPONENTS="main"
 # UBUNTU_COMPONENTS="main restricted universe multiverse"
-UBUNTU_COMPONENTS="main"
+UBUNTU_COMPONENTS="main universe"
 
 # Optionally use the changelog of a package to determine the suite to use if
 # none set.
