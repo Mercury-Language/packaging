@@ -6,6 +6,15 @@ APTCACHEHARDLINK=no
 DEBEMAIL="Paul Bone <paul@bone.id.au>"
 BUILDSOURCEROOTCMD=fakeroot
 
+EXTRAPACKAGES="eatmydata"
+EATMYDATALIB=/usr/lib/x86_64-linux-gnu/libeatmydata.so
+if [ -z "$LD_PRELOAD" ]; then
+  LD_PRELOAD=$EATMYDATALIB
+else
+  LD_PRELOAD="$LD_PRELOAD":$EATMYDATALIB
+fi
+export LD_PRELOAD
+
 # Codenames for Debian suites according to their alias. Update these when
 # needed.
 UNSTABLE_CODENAME="sid"
