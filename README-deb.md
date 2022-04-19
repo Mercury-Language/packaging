@@ -26,7 +26,14 @@ Setup the tools
 
 You will need some Debian tools to make Debian packages.
 
-    apt install build-essential devscripts pbuilder fakeroot dput
+    apt install build-essential \
+      devscripts \
+      pbuilder \
+      fakeroot \
+      dput \
+      debian-keyring \
+      debian-archive-keyring \
+      debian-ports-archive-keyring
 
 And if you plan to maintain the repository, then also install
 
@@ -63,13 +70,15 @@ script!  Set the username, any distribution codenames that may have changed
 since I wrote this, and your mirror sites.
 
 You may need to create some directories in /var/cache/pbuilder.
-Particularly the hooks and result directories.  If you get errors later come
-back to this step and add any required directories.  TODO: update these docs
-to say exactly what is necessary.
+Particularly the hooks and result directories.
+
+   sudo mkdir /var/cache/pbuilder/hooks /var/cache/pbuilder/result
 
 Copy C10shell into /var/cache/pbuilder/hooks  The C hooks are executed if a
 build fails, you can use them, for example this one, to determine why the
 build failed.
+
+   sudo cp C10shell /var/cache/pbuilder/hooks/
 
 ### sudoers
 
@@ -77,7 +86,7 @@ pbuilder (normally) needs sudo access, but it also needs access to some
 environment variables.  Edit your sudoers file.  Remeber to use the visudo
 command.
 
-    sudo visudo
+    sudo visudo -f /etc/sudoers.d/pbuilder
 
 Add to the Command alias section:
 
@@ -97,7 +106,7 @@ Don't make a mistake and get locked out of sudo access.
 
 Setup any chroots you need.
 
-    ARCH=amd64 DIST=jessie sudo pbuilder --create
+    ARCH=amd64 DIST=sid sudo pbuilder --create
 
 Hopefully you have an amd64 system, which means you can build either amd64
 or i386 packages and chroots.
