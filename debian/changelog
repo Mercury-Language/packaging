@@ -2,7 +2,9 @@ mercury (22.01-1) mercury-sid; urgency=medium
 
   * Update upstream version
   * Remove a bad .orig file from debian/
-  * Remove dependency on texi2html (Bug #7)
+  * Remove build dependency on texi2html (Bug #7)
+  * Remove build dependency on makeinfo
+  * Add build dependency on info
  
  -- Paul Bone <paul@bone.id.au>  Wed, 20 Apr 2022 10:18:11 +1000
 

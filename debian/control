@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Paul Bone <paul@bone.id.au>
 Build-Depends: debhelper (>=10), autoconf, automake, flex, bison,
-  libreadline-dev, texinfo, makeinfo, texlive, libhwloc-dev, pkg-config
+  libreadline-dev, texinfo, texlive, info, libhwloc-dev, pkg-config
 Standards-Version: 3.9.7
 Homepage: http://mercurylang.org
 
