@@ -1,56 +1,20 @@
-mercury-rotd (20200531-2) mercury-buster; urgency=low
+mercury (22.01-1) mercury-sid; urgency=medium
 
+  * Update upstream version
   * Remove a bad .orig file from debian/
   * Remove dependency on texi2html (Bug #7)
+ 
+ -- Paul Bone <paul@bone.id.au>  Wed, 20 Apr 2022 10:18:11 +1000
 
- -- Paul Bone <paul@bone.id.au>  Thu, 02 Jul 2020 23:00:18 +1000
+mercury (20.01.1-1) mercury-buster; urgency=medium
 
-mercury-rotd (20200531-1) mercury-buster; urgency=medium
-
-  * Update upstream version
-
- -- Paul Bone <paul@bone.id.au>  Tue, 30 Jun 2020 22:07:00 +1000
-
-mercury-rotd (20200108-2) mercury-buster; urgency=low
-
+  * New upstream version
   * Modify the way grades are configured
   * Upgrade to debian compat level 10
-
- -- Paul Bone <paul@bone.id.au>  Mon, 20 Jan 2020 22:46:15 +1100
-
-mercury-rotd (20200108-1) mercury-buster; urgency=medium
-
-  * Update upstream version
-
- -- Paul Bone <paul@bone.id.au>  Sun, 19 Jan 2020 16:21:42 +1100
-
-mercury-rotd (20181114-5) mercury-stretch; urgency=low
-
   * Fix how version number is set & compiled in
-
- -- Paul Bone <paul@bone.id.au>  Fri, 26 Jul 2019 23:04:00 +1100
-
-mercury-rotd (20181114-3) mercury-stretch; urgency=low
-
   * Add missing texlive build dependency
   * Parallelise build
-
- -- Paul Bone <paul@bone.id.au>  Wed, 21 Jul 2019 16:02:00 +1100
-
-mercury-rotd (20181114-2) mercury-stretch; urgency=low
-
   * Bugfix: mercury-hlctrail-dev package the correct files
-
- -- Paul Bone <paul@bone.id.au>  Wed, 17 Jan 2019 00:30:00 +1100
-
-mercury-rotd (20181114-1) mercury-stretch; urgency=low
-
-  * Update Mercury to rotd-2018-11-14
-
- -- Paul Bone <paul@bone.id.au>  Fri, 16 Nov 2018 23:08:52 +1100
-
-mercury (14.01.1-3) mercury-sid; urgency=low
-
   * Seperate the remove-paths patch from the version patch
   * Fix package priority
   * Fix some syntax in the copyright file

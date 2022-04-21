@@ -1,4 +1,4 @@
-Source: mercury-rotd
+Source: mercury
 Section: devel
 Priority: optional
 Maintainer: Paul Bone <paul@bone.id.au>
@@ -7,32 +7,32 @@ Build-Depends: debhelper (>=10), autoconf, automake, flex, bison,
 Standards-Version: 3.9.7
 Homepage: http://mercurylang.org
 
-Package: mercury-rotd-tools
+Package: mercury-tools
 Architecture: i386 amd64
 Depends: ${misc:Depends}, ${shlibs:Depends}, perl, gcc
-Recommends: mercury-rotd-gc-dev,
-  mercury-rotd-hlc-dev | mercury-rotd-hlcpar-dev | mercury-rotd-hlctrail-dev |
-  mercury-rotd-llc-dev | mercury-rotd-llcpar-dev | mercury-rotd-llctrail-dev
-Suggests: mercury-rotd-docs, mercury-rotd-examples, mercury-rotd-devel
+Recommends: mercury-gc-dev,
+  mercury-hlc-dev | mercury-hlcpar-dev | mercury-hlctrail-dev |
+  mercury-llc-dev | mercury-llcpar-dev | mercury-llctrail-dev
+Suggests: mercury-docs, mercury-examples, mercury-devel
 Conflicts: mercury-tools
 Description: Mercury programming language tools
  ${about-mercury}
  .
  This package contains the compiler, debugging and profiling tools.
 
-Package: mercury-rotd-recommended
+Package: mercury-recommended
 Architecture: any
-Depends: ${misc:Depends}, mercury-rotd-tools,
-  mercury-rotd-hlc-dev, mercury-rotd-hlcpar-dev,
-  mercury-rotd-llc-dev, mercury-rotd-llcpar-dev,
-  mercury-rotd-devel, mercury-rotd-docs
+Depends: ${misc:Depends}, mercury-tools,
+  mercury-hlc-dev, mercury-hlcpar-dev,
+  mercury-llc-dev, mercury-llcpar-dev,
+  mercury-devel, mercury-docs
 Description: Mercury programming language tools
  ${about-mercury}
  .
  This meta-package depends on packages for a reasonable Mercury development
  environment.
 
-Package: mercury-rotd-gc
+Package: mercury-gc
 Architecture: i386 amd64
 Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
@@ -43,11 +43,11 @@ Description: Mercury programming language garbage collector
  This package contains the Mercury fork of the Boehm-Demers-Weiser garbage
  collector required to run Mercury programs.
 
-Package: mercury-rotd-gc-dev
+Package: mercury-gc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc (= ${binary:Version})
-Recommends: mercury-rotd-tools
+Depends: ${misc:Depends}, mercury-gc (= ${binary:Version})
+Recommends: mercury-tools
 Conflicts: mercury-gc-dev
 Description: Mercury programming language garbage collector
  ${about-mercury}
@@ -56,10 +56,10 @@ Description: Mercury programming language garbage collector
  fork of the Boehm-Demers-Weiser garbage collector required to run Mercury
  programs.  It also contains a number of grade-agnostic development files.
 
-Package: mercury-rotd-hlc
+Package: mercury-hlc
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= ${binary:Version})
 Conflicts: mercury-hlc
 Description: Mercury programming language runtime (hlc.gc)
  ${about-mercury}
@@ -67,12 +67,12 @@ Description: Mercury programming language runtime (hlc.gc)
  This package contains dynamic libraries for Mercury programs built in the
  hlc.gc grade.
 
-Package: mercury-rotd-hlc-dev
+Package: mercury-hlc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
-  mercury-rotd-hlc (= ${binary:Version})
-Recommends: mercury-rotd-tools (= ${binary:Version})
+Depends: ${misc:Depends}, mercury-gc-dev (= ${binary:Version}),
+  mercury-hlc (= ${binary:Version})
+Recommends: mercury-tools (= ${binary:Version})
 Conflicts: mercury-hlc-dev
 Description: Mercury programming language development files (hlc.gc)
  ${about-mercury}
@@ -80,10 +80,10 @@ Description: Mercury programming language development files (hlc.gc)
  This package contains header files, interface files and static libraries for
  the hlc.gc grade.
 
-Package: mercury-rotd-hlcpar
+Package: mercury-hlcpar
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= ${binary:Version})
 Conflicts: mercury-hlcpar
 Description: Mercury programming language runtime (hlc.par.gc)
  ${about-mercury}
@@ -91,12 +91,12 @@ Description: Mercury programming language runtime (hlc.par.gc)
  This package contains dynamic libraries for Mercury programs built in the
  hlc.par.gc grade.
 
-Package: mercury-rotd-hlcpar-dev
+Package: mercury-hlcpar-dev
 Architecture: i386 amd64
 Section: libdevel
 Depends: ${misc:Depends}, libhwloc-dev, 
-  mercury-rotd-gc-dev (= ${binary:Version}), mercury-rotd-hlcpar (= ${binary:Version})
-Recommends: mercury-rotd-tools (= ${binary:Version})
+  mercury-gc-dev (= ${binary:Version}), mercury-hlcpar (= ${binary:Version})
+Recommends: mercury-tools (= ${binary:Version})
 Conflicts: mercury-hlcpar-dev
 Description: Mercury programming language development files (hlc.par.gc)
  ${about-mercury}
@@ -104,10 +104,10 @@ Description: Mercury programming language development files (hlc.par.gc)
  This package contains header files, interface files and static libraries for
  the hlc.par.gc grade.
 
-Package: mercury-rotd-hlctrail
+Package: mercury-hlctrail
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= ${binary:Version})
 Conflicts: mercury-hlctrail
 Description: Mercury programming language runtime (hlc.gc.tr)
  ${about-mercury}
@@ -115,12 +115,12 @@ Description: Mercury programming language runtime (hlc.gc.tr)
  This package contains dynamic libraries for Mercury programs built in the
  hlc.gc.tr grade.
 
-Package: mercury-rotd-hlctrail-dev
+Package: mercury-hlctrail-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
-  mercury-rotd-hlctrail (= ${binary:Version})
-Recommends: mercury-rotd-tools (= ${binary:Version})
+Depends: ${misc:Depends}, mercury-gc-dev (= ${binary:Version}),
+  mercury-hlctrail (= ${binary:Version})
+Recommends: mercury-tools (= ${binary:Version})
 Conflicts: mercury-hlctrail-dev
 Description: Mercury programming language development files (hlc.gc.tr)
  ${about-mercury}
@@ -128,10 +128,10 @@ Description: Mercury programming language development files (hlc.gc.tr)
  This package contains header files, interface files and static libraries for
  the hlc.gc.tr grade.
 
-Package: mercury-rotd-llc
+Package: mercury-llc
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= ${binary:Version})
 Conflicts: mercury-llc
 Description: Mercury programming language runtime (asm_fast.gc)
  ${about-mercury}
@@ -139,12 +139,12 @@ Description: Mercury programming language runtime (asm_fast.gc)
  This package contains dynamic libraries for Mercury programs built in the
  asm_fast.gc grade.
 
-Package: mercury-rotd-llc-dev
+Package: mercury-llc-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
-  mercury-rotd-llc (= ${binary:Version})
-Recommends: mercury-rotd-tools (= ${binary:Version})
+Depends: ${misc:Depends}, mercury-gc-dev (= ${binary:Version}),
+  mercury-llc (= ${binary:Version})
+Recommends: mercury-tools (= ${binary:Version})
 Conflicts: mercury-llc-dev
 Description: Mercury programming language development files (asm_fast.gc)
  ${about-mercury}
@@ -152,10 +152,10 @@ Description: Mercury programming language development files (asm_fast.gc)
  This package contains header files, interface files and static libraries for
  the asm_fast.gc grade.
 
-Package: mercury-rotd-llcpar
+Package: mercury-llcpar
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= ${binary:Version})
 Conflicts: mercury-llcpar
 Description: Mercury programming language runtime (asm_fast.par.gc.stseg)
  ${about-mercury}
@@ -163,12 +163,12 @@ Description: Mercury programming language runtime (asm_fast.par.gc.stseg)
  This package contains dynamic libraries for Mercury programs built in the
  asm_fast.par.gc.stseg grade.
 
-Package: mercury-rotd-llcpar-dev
+Package: mercury-llcpar-dev
 Architecture: i386 amd64
 Section: libdevel
 Depends: ${misc:Depends}, libhwloc-dev,
-  mercury-rotd-gc-dev (= ${binary:Version}), mercury-rotd-llcpar (= ${binary:Version})
-Recommends: mercury-rotd-tools (= ${binary:Version})
+  mercury-gc-dev (= ${binary:Version}), mercury-llcpar (= ${binary:Version})
+Recommends: mercury-tools (= ${binary:Version})
 Conflicts: mercury-llcpar-dev
 Description: Mercury programming language dev files (asm_fast.par.gc.stseg)
  ${about-mercury}
@@ -176,10 +176,10 @@ Description: Mercury programming language dev files (asm_fast.par.gc.stseg)
  This package contains header files, interface files and static libraries for
  the asm_fast.par.gc.stseg grade.
 
-Package: mercury-rotd-llctrail
+Package: mercury-llctrail
 Architecture: i386 amd64
 Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= ${binary:Version})
 Conflicts: mercury-llctrail
 Description: Mercury programming language runtime (asm_fast.gc.tr)
  ${about-mercury}
@@ -187,12 +187,12 @@ Description: Mercury programming language runtime (asm_fast.gc.tr)
  This package contains dynamic libraries for Mercury programs built in the
  asm_fast.gc.tr grade.
 
-Package: mercury-rotd-llctrail-dev
+Package: mercury-llctrail-dev
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, mercury-rotd-gc-dev (= ${binary:Version}),
-  mercury-rotd-llctrail (= ${binary:Version})
-Recommends: mercury-rotd-tools (= ${binary:Version})
+Depends: ${misc:Depends}, mercury-gc-dev (= ${binary:Version}),
+  mercury-llctrail (= ${binary:Version})
+Recommends: mercury-tools (= ${binary:Version})
 Conflicts: mercury-llctrail-dev
 Description: Mercury programming language development files (asm_fast.gc.tr)
  ${about-mercury}
@@ -200,12 +200,12 @@ Description: Mercury programming language development files (asm_fast.gc.tr)
  This package contains header files, interface files and static libraries for
  the asm_fast.gc.tr grade.
 
-Package: mercury-rotd-devel
+Package: mercury-devel
 Architecture: i386 amd64
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-rotd-gc (= ${binary:Version}),
-  mercury-rotd-gc-dev (= ${binary:Version}), libreadline-dev
-Recommends: mercury-rotd-tools (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, mercury-gc (= ${binary:Version}),
+  mercury-gc-dev (= ${binary:Version}), libreadline-dev
+Recommends: mercury-tools (= ${binary:Version})
 Conflicts: mercury-devel
 Description: Mercury programming language debugging and profiling grades
  ${about-mercury}
@@ -215,7 +215,7 @@ Description: Mercury programming language debugging and profiling grades
  asm_fast.gc.profdeep.stseg, asm_fast.gc.memprof.stseg and
  asm_fast.gc.prof.stseg grades.
 
-Package: mercury-rotd-docs
+Package: mercury-docs
 Architecture: all
 Section: doc
 Depends: ${misc:Depends}
@@ -225,7 +225,7 @@ Description: Mercury programming language documentation
  .
  This package contains the documentation.
 
-Package: mercury-rotd-examples
+Package: mercury-examples
 Architecture: all
 Section: doc
 Depends: ${misc:Depends}
@@ -237,9 +237,9 @@ Description: Mercury programming language examples and extras
  install their source code in /usr/share/doc/mercury/, it will not attempt to
  build or install these programs and libraries..
 
-Package: mercury-rotd-maintainers
+Package: mercury-maintainers
 Architecture: i386 amd64
-Depends: ${misc:Depends}, ${shlibs:Depends}, make, mercury-rotd-tools (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, make, mercury-tools (= ${binary:Version})
 Conflicts: mercury-maintainers, mmake
 Description: Mercury programming language maintainers' tools 
  ${about-mercury}

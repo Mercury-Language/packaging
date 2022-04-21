@@ -1,11 +1,11 @@
 --- a/Mmakefile
 +++ b/Mmakefile
-@@ -876,7 +876,7 @@
- 		(cd tests; $(SUBDIR_MMAKE) clean) \
+@@ -883,7 +883,7 @@
+ 		(cd tests; $(MMAKE) $(MMAKEFLAGS) clean) \
  	fi
  
 -realclean: realclean_tests realclean_subdirs realclean_local
 +realclean: realclean_subdirs realclean_local
  	+cd scripts; $(SUBDIR_MMAKE) realclean
  
- .PHONY: realclean_local
+ .PHONY: clean_extras

@@ -1,6 +1,6 @@
 --- a/configure.ac
 +++ b/configure.ac
-@@ -3922,13 +3922,7 @@
+@@ -3598,13 +3598,7 @@
  fi
  
  if test "$enable_trail_grades" = yes; then
@@ -15,7 +15,7 @@
      if test "$enable_inefficient_grades" = yes; then
          if test "$enable_nogc_grades" = yes; then
              LIBGRADES="$LIBGRADES $DEFAULT_BASE_GRADE.tr"
-@@ -3969,7 +3963,6 @@
+@@ -3645,7 +3639,6 @@
  # By default, we also use stack segments in debugging grades.
  #
  if test "$enable_debug_grades" = yes; then
