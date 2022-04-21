@@ -1,0 +1,11 @@
+--- a/doc/Mmakefile
++++ b/doc/Mmakefile
+@@ -126,7 +126,7 @@
+ 	# formatted versions of the man pages.
+ 	# But it might make sense to add them.
+ .PHONY: all
+-all: $(INFOPAGES) $(DVI) $(HTML) manpages $(MDB_DOC)
++all: $(INFOPAGES) $(DVI) $(HTML) manpages $(MDB_DOC) $(PS) $(PDF)
+ #all: ps pdf text formatted_manpages
+ 
+ #-----------------------------------------------------------------------------#

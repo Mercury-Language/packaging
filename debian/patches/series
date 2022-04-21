@@ -3,3 +3,5 @@ version
 remove-paths
 grades
 no-realclean-tests
+no-realclean-extras
+build-pdf

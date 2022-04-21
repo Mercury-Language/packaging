@@ -1,0 +1,22 @@
+--- a/Mmakefile
++++ b/Mmakefile
+@@ -893,7 +893,7 @@
+ 	fi
+ 
+ .PHONY: realclean_local
+-realclean_local: realclean_config realclean_docs realclean_extras
++realclean_local: realclean_config realclean_docs
+ 
+ .PHONY: realclean_subdirs
+ realclean_subdirs: clean_subdirs
+@@ -918,10 +918,4 @@
+ 		(cd tests; $(MMAKE) $(MMAKEFLAGS) realclean) \
+ 	fi
+ 
+-.PHONY: realclean_extras
+-realclean_extras:
+-	+if test -d extras; then \
+-		(cd extras; $(MMAKE) $(MMAKEFLAGS) realclean) \
+-	fi
+-
+ #-----------------------------------------------------------------------------#
