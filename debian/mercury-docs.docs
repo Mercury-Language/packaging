@@ -4,13 +4,12 @@ doc/*.pdf
 doc/*.ps
 BUGS
 HISTORY
-LIMITATIONS
+LIMITATIONS.md
 NEWS
 README
 README.bootstrap
 README.clang
 README.CSharp
-README.Erlang
 README.Java
 README.Linux*
 README.ssdebug
