@@ -10,5 +10,5 @@ complete -F _quilt_completion $_quilt_complete_opt dquilt
 
 # Use gpg2 with debsign, you may need to modify this, depending on whether
 # gpg or gpg2 has your secret keys.
-alias debsign="debsign -pgpg2"
+alias debsign="debsign -pgpg2 -k<KEYID>"
 
