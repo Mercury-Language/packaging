@@ -5,3 +5,4 @@ grades
 no-realclean-tests
 no-realclean-extras
 build-pdf
+manpage-fix
