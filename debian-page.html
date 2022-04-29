@@ -15,34 +15,29 @@ let us know</a> if there are problems.
 
 Mercury versions:<br/>
 <ul>
-  <li>Mercury 20.06 (mercury-* packages)</li>
+  <li>Mercury 22.01 (mercury-* packages)</li>
   <li>Mercury ROTD 2020-05-31 (mercury-rotd-* packages)</li>
 </ul>
 
 Architectures:<br/>
 <ul>
   <li>amd64</li>
-  <li>i386 (But not Ubuntu distros)</li>
+  <li>i386 (limited support)</li>
 </ul>
 
 OSs with direct support:<br/>
 <ul>
-  <li>Debian 10 buster</li>
-  <li>Debian 9 stretch</li>
-  <li>Ubuntu 19.04 disco - (May deprecate this and use 'focal' instead if it
-    works)</li>
-  <li>Ubuntu 20.04 focal</li>
+  <li>Debian sid (unstable)</li>
+  <li>Debian 12 bookworm (testing)</li>
+  <li>Debian 11 bullseye (stable)</li>
+  <li>Ubuntu 19.04 (bionic)</li>
+  <li>Ubuntu 20.04 (focal)</li>
+  <li>Ubuntu 22.04 (jammy)</li>
 </ul>
 
 <p>
 We build on the above OSs, but often these packages will work on other
-Debian/Ubuntu versions.  For example the 'stretch' versions work on Ubuntu
-18.04 and Mint 19.
-</p>
-
-<p>
-Support has been removed for Debian 8 (jessie) and Ubuntu 16.04,
-if you need them file an issue and I can make a backport.
+Debian/Ubuntu versions, including derivative OSs like Mint.
 </p>
 
 <p>
@@ -72,7 +67,7 @@ Depending on the C compiler some packages may use "reg" grades rather than
 <p>
 There are two groups of packages to choose from.
 The stable version of Mercury's packages begin with "mercury", a more recent
-snapshot begins with "mercury-rotd".
+snapshot begins with "mercury-rotd" (not updated yet).
 </p>
 
 <p>
@@ -97,8 +92,8 @@ software I publish.
 <code><pre>
 sudo apt install wget ca-certificates
 cd /tmp
-wget <a href="https://paul.bone.id.au/paul.gpg">https://paul.bone.id.au/paul.gpg</a>
-sudo cp paul.gpg /etc/apt/trusted.gpg.d/paul-6507444DBDF4EAD2.gpg
+wget <a href="https://paul.bone.id.au/paul.asc">https://paul.bone.id.au/paul.asc</a>
+sudo cp paul.asc /etc/apt/trusted.gpg.d/paulbone.asc
 </pre></code>
 
 <p>
@@ -115,19 +110,9 @@ deb-src http://dl.mercurylang.org/deb/ <i>DISTRO</i> main
 <p>
 Depending on your OS version
 replace <i>DISTRO</i> with one of:
-<code>stretch</code>, <code>buster</code>, <code>disco</code> or
-<code>focal</code>.
+<code>sid</code>, <code>bookworm</code>, <code>bullseye</code>,
+<code>disco</code>, <code>focal</code>, or <code>jammy</code>.
 </p>
-
-<table>
-  <tr><th>You have</th><th>Then use</th></tr>
-  <tr><td>Debian 9 (stretch)</td><td>stretch</td></tr>
-  <tr><td>Debian 10 (buster)</td><td>buster</td></tr>
-  <tr><td>Ubuntu 18.04 (bionic)</td><td>stretch</td></tr>
-  <tr><td>Ubuntu 19.04 (disco)</td><td>disco</td></tr>
-  <tr><td>Ubuntu 20.04 (focal)</td><td>focal</td></tr>
-  <tr><td>Mint 19</td><td>stretch</td></tr>
-</table>
 
 <p>
 If your OS version isn't listed then try some of the others, depending on
@@ -135,7 +120,7 @@ what dependencies you have available.
 </p>
 
 <p>
-Note that Ubuntu and derivatives must have the universe repository enabled.
+Ubuntu and derivatives must have the universe repository enabled.
 </p>
 
 <p>
