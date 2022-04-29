@@ -23,11 +23,10 @@ STABLE_CODENAME="bullseye"
 STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
 
 # List of Debian suites.
-DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BACKPORTS_SUITE
-    "experimental" "unstable" "testing" "stable")
+DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BACKPORTS_SUITE)
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("impish" "focal" "bionic")
+UBUNTU_SUITES=("jammy" "focal" "bionic")
 
 # Mirrors to use. Update these to your preferred mirror.
 DEBIAN_MIRROR="http://mirror.aarnet.edu.au/pub/debian/"
