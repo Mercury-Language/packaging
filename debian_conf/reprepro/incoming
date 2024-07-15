@@ -1,6 +1,6 @@
-Name: mercury
+Name: incoming 
 IncomingDir: incoming
 TempDir: temp
-Allow: mercury-stretch mercury-buster mercury-disco mercury-focal
+Allow: sid trixie bookworm bullseye noble jammy focal bionic
 Permit: unused_files
 Cleanup: unused_files

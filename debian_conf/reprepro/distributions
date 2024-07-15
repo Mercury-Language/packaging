@@ -1,36 +1,68 @@
-Codename: mercury-stretch
-Suite: stretch
+Codename: sid
+Suite: unstable 
 Origin: Paul Bone
 Label: Mercury Packages
 Architectures: source i386 amd64
 Components: main
-Description: Mercury packages for Debian Stretch
+Description: Mercury packages for Debian Sid
 SignWith: BDF4EAD2
 
-Codename: mercury-buster
-Suite: buster
+Codename: trixie 
+Suite: testing
 Origin: Paul Bone
 Label: Mercury Packages
 Architectures: source i386 amd64
 Components: main
-Description: Mercury packages for Debian Buster
+Description: Mercury packages for Debian 12 (Bookworm)
 SignWith: BDF4EAD2
 
-Codename: mercury-disco
-Suite: disco
+Codename: bookworm 
+Suite: stable
 Origin: Paul Bone
 Label: Mercury Packages
 Architectures: source i386 amd64
 Components: main
-Description: Mercury packages for Ubuntu 19.04 
+Description: Mercury packages for Debian 12 (Bookworm)
 SignWith: BDF4EAD2
 
-Codename: mercury-focal
-Suite: focal
+Codename: bullseye
+Suite: oldstable
+Origin: Paul Bone
+Label: Mercury Packages
+Architectures: source i386 amd64
+Components: main
+Description: Mercury packages for Debian 11 (Bullseye)
+SignWith: BDF4EAD2
+
+Codename: noble 
+Origin: Paul Bone
+Label: Mercury Packages
+Architectures: source i386 amd64
+Components: main
+Description: Mercury packages for Ubuntu 22.04 
+SignWith: BDF4EAD2
+
+Codename: jammy 
+Origin: Paul Bone
+Label: Mercury Packages
+Architectures: source i386 amd64
+Components: main
+Description: Mercury packages for Ubuntu 22.04 
+SignWith: BDF4EAD2
+
+Codename: focal
 Origin: Paul Bone
 Label: Mercury Packages
 Architectures: source i386 amd64
 Components: main
 Description: Mercury packages for Ubuntu 20.04 
+SignWith: BDF4EAD2
+
+Codename: bionic
+Origin: Paul Bone
+Label: Mercury Packages
+Architectures: source i386 amd64
+Components: main
+Description: Mercury packages for Ubuntu 18.04 
 SignWith: BDF4EAD2
 

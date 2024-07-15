@@ -18,15 +18,16 @@ export LD_PRELOAD
 # Codenames for Debian suites according to their alias. Update these when
 # needed.
 UNSTABLE_CODENAME="sid"
-TESTING_CODENAME="bookworm"
-STABLE_CODENAME="bullseye"
+TESTING_CODENAME="trixie"
+STABLE_CODENAME="bookworm"
 STABLE_BACKPORTS_SUITE="$STABLE_CODENAME-backports"
+OLDSTABLE_CODENAME="bullseye"
 
 # List of Debian suites.
-DEBIAN_SUITES=($UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BACKPORTS_SUITE)
+DEBIAN_SUITES="$UNSTABLE_CODENAME $TESTING_CODENAME $STABLE_CODENAME $STABLE_BACKPORTS_SUITE $OLDSTABLE_CODENAME"
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("jammy" "focal" "bionic")
+UBUNTU_SUITES="noble jammy focal bionic"
 
 # Mirrors to use. Update these to your preferred mirror.
 DEBIAN_MIRROR="http://mirror.aarnet.edu.au/pub/debian/"
