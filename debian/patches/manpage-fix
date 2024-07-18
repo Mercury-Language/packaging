@@ -1,19 +1,8 @@
---- a/Mmakefile
-+++ b/Mmakefile
-@@ -344,7 +344,7 @@
- 	+cd compiler && $(SUBDIR_MMAKE)
- 
- .PHONY: doc
--doc: 	scripts util
-+doc: 	scripts util compiler profiler
- 	+cd doc && $(SUBDIR_MMAKE)
- 
- .PHONY: slice
 --- a/doc/Mmakefile
 +++ b/doc/Mmakefile
-@@ -24,6 +24,8 @@
+@@ -27,6 +27,8 @@
  
- mmc.1: ../compiler/options.m
+ mprof.1: ../profiler/mercury_profile.m ../profiler/options.m
  
 +mprof.1: ../profiler/options.m
 +

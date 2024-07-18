@@ -8,7 +8,7 @@ Mercury.
  
  The documentation sources are in the `doc' subdirectory.
 -The installation process will install INFO, HTML, and DVI versions under the
--nominated installation prefix, by default /usr/local/mercury-22.01.
+-nominated installation prefix, by default /usr/local/mercury-22.01.8.
  It will also install Unix-style man pages under the same prefix.
  
  The files RELEASE_NOTES, NEWS, HISTORY, LIMITATIONS, and BUGS

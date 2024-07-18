@@ -3,7 +3,7 @@ Update version number
 +++ b/README
 @@ -1,5 +1,5 @@
  This directory contains the source distribution for the
--Melbourne Mercury compiler, version 22.01.
+-Melbourne Mercury compiler, version 22.01.8.
 +Melbourne Mercury compiler.
  
  See the file LICENSE for copyright and licensing information.
