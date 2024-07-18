@@ -6,16 +6,10 @@ set -e
 DRY_RUN=""
 # DRY_RUN="--dry-run -i"
 
-
-for REPO in test deimos sodium; do
-    reprepro -b /mnt/hdd-dev/deb/$REPO processincoming incoming
-    reprepro -b /mnt/hdd-dev/deb/$REPO export
-    reprepro -b /mnt/hdd-dev/deb/$REPO createsymlinks 
-done
-
 # -rlto are some of the --archive options except they won't change file
 # permissions or ownership.
 
+echo Test
 rsync -rltov --del $DRY_RUN \
     --exclude conf \
     --exclude db \
@@ -23,6 +17,7 @@ rsync -rltov --del $DRY_RUN \
     --exclude temp \
     test/ sodium:/mnt/tank/deb/test/
 
+echo deimos
 rsync -rltov --del $DRY_RUN \
     --exclude conf \
     --exclude db \
@@ -30,6 +25,7 @@ rsync -rltov --del $DRY_RUN \
     --exclude temp \
     deimos/ deimos:/srv/dl1/deb/ || true
 
+echo sodium
 rsync -rltov --del $DRY_RUN \
     --exclude conf \
     --exclude db \
